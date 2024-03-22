@@ -1,0 +1,119 @@
+<%- include('firm-header') -%>
+
+<!-- <script>
+  fetch("/getMyOrders").then(result=>{
+    result.json().then(result=>{
+      console.log(result.res);
+    })
+  })
+</script> -->
+
+
+  <div class="heading-row mb-20">
+    <div class="row align-item-center">
+       <div class="col-lg-6">
+          <h3 class="page-title"><span class="page-title-icon bg-gradient-primary text-white mr-2"><i class="mdi mdi-tree"></i></span>Firm List </h3>
+       </div>
+         
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th width="1%" class="border-top-0">S.No</th>
+                <th width="6%" class="border-top-0">Company Name</th>
+                <th width="6%" class="border-top-0">Company's License</th>
+                <th width="6%" class="border-top-0">Contact No.</th>
+                <!-- <th width="15%" class="border-top-0">Country</th> -->
+                <th width="5%" class="border-top-0">
+                  Quotation Per/Thousand Trees
+                </th>
+                <th width="5%" class="border-top-0">
+                  Total Area of Land To Grow Trees
+                </th>
+                <th width="5%" class="border-top-0">
+                  Approx Tree Plantation Capacity
+                </th>
+                <th width="8%" class="border-top-0">Email</th>
+                <th width="6%">Action</th>
+
+                <!-- <th width="5%" class="border-top-0">verify</th> -->
+  
+              </tr>
+            </thead>
+            <tbody id="dat"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('footer') -%>
+
+  <!-- <script>
+$(document).ready( function () {
+  $('.table').DataTable();
+} );
+</script> -->
+
+<script>
+  $(document).ready(function () {
+    $(".table").dataTable(
+      {
+    "bPaginate": false,
+    "bLengthChange": false,
+    "bFilter": false,
+    "bInfo": false,
+    "bAutoWidth": false }
+    );
+  });
+</script>
+
+<script>
+
+  function makeRequest(u){
+    let user = decodeURIComponent(u);
+    user = JSON.parse(user);
+    console.log(user);
+    $.post("/createOrder",{"plantationId":user._id,"plantation_name":u.company_name,"ApproxCapacity":user.ApproxCapacity,"quotation":user.quotation,"totalArea":user.totalArea},(result)=>{
+        if(result.error){
+          window.alert("Some Error has Occured");
+        }else{
+          window.alert("Reqest Send");
+          location.reload();
+        }
+    });
+  }
+
+  fetch("/fetchVerifiedPlantation").then((res) => {
+    res.json().then((result) => {
+      console.log(result);
+      let temp="";
+      data = result.result;
+      data.forEach(async (u, index) => {
+        // console.log(u)
+        let i = index + 1;
+        temp += "<tr>";
+        temp += "<td>" + i + "</td>";
+        // temp +="<td>"+u.sr=0 ;for(let i=0;i<=100;i++){sr=i}+"</td>";
+        temp += "<td>" + u.company_name + "</td>";
+        temp += "<td>" + u.companys_licence + "</td>";
+        temp += "<td>" + u.mobile + "</td>";
+        // temp += "<td>" + u.gasPrice + "</td>";
+        temp += "<td>" + u.quotation + "</td>";
+        temp += "<td>" + u.totalArea + "</td>";
+        // temp += "<td>" + "Account: <span class='showAccount'></span>" + "</td>";
+        temp += "<td >" + u.ApproxCapacity + "</td>";
+        temp += "<td>"+ u.email+"</td>";
+       console.log(u)
+				temp += `<td><button class="btn btn-danger" onClick=makeRequest("${encodeURIComponent(JSON.stringify(u))}")> Request </button></td>`
+        temp += "</tr>";
+      });
+      document.getElementById("dat").innerHTML = temp;
+    });
+  });
+</script>

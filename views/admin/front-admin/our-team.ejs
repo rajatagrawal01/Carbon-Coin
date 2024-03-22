@@ -1,0 +1,87 @@
+<%- include('header') -%>
+
+  <div class="heading-row mb-20">
+    <div class="row align-item-center">
+       <div class="col-lg-6">
+          <h3 class="page-title"><span class="page-title-icon bg-gradient-primary text-white mr-2"><i class="mdi mdi-home"></i></span> Our Team </h3>
+       </div>
+        <div class="col-lg-6">
+         <div class="text-right">
+           <div>
+             <a href="/add-new-member" class="btn btn-common bg-gradient-primary">Add new Member</a>
+           </div>
+         </div>
+       </div>
+       <% if(err_msg!=undefined && err_msg !='' ){ %>
+        <div class="alert alert-danger text-center  flash_msg " id="error_msg">
+          <%= err_msg %>
+        </div>
+         
+        <% }%>
+         <% if(success_msg!=undefined && success_msg !='' ){ %>
+        <div class="alert alert-success text-center  flash_msg "id="success_message">
+          <%= success_msg %>
+        </div>
+        <% }%>
+    
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th width="3%">S. No.</th>
+                <th width="6%">Member Image</th>
+                <th width="10%">Name</th>
+                <th width="8%">Designation</th>
+                <th width="3%">Status</th>
+                <th width="10%">Linked In URL</th>
+                <th width="16%">content</th>
+                <th width="5%">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% var count =1%>
+            <% TeamData.forEach(function(row){%>
+              <tr>
+                <td><%=count %></td>
+                <% count++%>
+                <td><%=row.member_image%></td>
+                <td><%=row.name%></td>
+                <td><%=row.designation%></td>
+                <td><%=row.status%></td>
+                <td><%=row.linkedin_url%></td>
+                <td><%=row.content%></td>
+
+
+                 <td>
+                  <div class="edit-icons">
+                   
+                    <a href="/edit-member" onclick="location.href=this.href+'?_id='+ `<%=row._id %>`;
+                      return false" data-toggle="tooltip" data-placement="top" title="Edit"><i class="mdi mdi-pencil"></i></a>
+                    <a href="/delete-member" onclick="location.href=this.href+'?_id='+ `<%=row._id %>`;
+                      return false" data-toggle="tooltip" data-placement="top" title="Delete"><i class="mdi mdi-close"></i></a>
+              
+                  </div>
+                  </td>
+              </tr>
+
+               <%})%>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('footer') -%>
+
+  <script>
+$(document).ready( function () {
+  $('.table').DataTable();
+} );
+</script>

@@ -1,0 +1,78 @@
+<%- include('header') -%>
+
+  <div class="heading-row mb-20">
+    <div class="row align-item-center">
+      <div class="col-lg-6">
+        <h3 class="page-title"><span class="page-title-icon bg-gradient-primary text-white mr-2"><i
+              class="mdi mdi-comment-question-outline"></i></span> Edit Question </h3>
+      </div>
+      <div class="col-lg-6">
+        <div class="text-right">
+          <div>
+            <a href="/faq-list" class="btn btn-common bg-gradient-primary">Go Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div>
+                        <div class="profile-form mt-20">
+                          <form method="POST" action="/edit-faqs" type="update">
+                            <div class="row">
+                              <div class="col-md-8">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label>FAQ Question</label>
+                                      <input type="text" name="question" class="form-control" value="<%=faqData.question%>">
+                                      <input type="text" name="id" class="form-control" value="<%=faqData._id%>"hidden>
+
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label>Status</label>
+                                      <div class="box">
+                                        <select class="form-control" name="status">
+                                          <option>Active</option>
+                                          <option>Inactive</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label>FAQ Answer</label>
+                                      <textarea class="form-control" name="editor1"><%=faqData.answer%></textarea>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="popup-btn text-center">
+                                  <button class="btn btn-common bg-gradient-primary" type="submit">Update</button>
+                                  <a href="" class="btn btn-common bg-gradient-primary">Cancel</a>
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <%- include('footer') -%>

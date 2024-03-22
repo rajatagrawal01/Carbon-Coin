@@ -1,0 +1,216 @@
+<%- include('header') -%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style type="text/css">
+  td {
+    max-width: 150px !important;
+    overflow: hidden !important
+  }
+
+table, th, td {
+  border: 1px solid white;
+}
+.card-body .table td {
+    font-size: 13px;
+    line-height: 20px;
+    color: #474747;
+    font-weight: 500;
+    text-align: justify;
+    /* word-break: break-all; */
+}
+  #example_wrapper .dataTables_filter {
+    display: none !important;
+  }
+</style>
+
+<script>
+
+  function deleteFirm(u){
+    fetch("/deleteFirm?id="+u).then(result=>{
+      result.json().then(res=>{
+        if(res.error){
+          window.alert("Some Error Occured At Server ! Cannot Update")
+        }else{
+          window.alert("Firm Deleted");
+        }
+        location.reload();
+      })
+    })
+  }
+   
+
+  function updateStatus(u){
+    fetch("/updateFirmStatus?id="+u).then(result=>{
+      result.json().then(res=>{
+        if(res.error){
+          window.alert("Some Error Occured At Server ! Cannot Update")
+        }else{
+          window.alert("Status Updated");
+        }
+
+        location.reload();
+      })
+    })
+  }
+
+  fetch("/fetchallfirm").then((res) => {
+      console.log("fetch all company")
+    res.json().then((result) => {
+      console.log(result);
+      let temp="";
+      data = result.res;
+      data.forEach(async (u, index) => {
+        // console.log(u)
+        let i = index + 1;
+        temp += "<tr>";
+        temp += "<td>" + i + "</td>";
+        // temp +="<td>"+u.sr=0 ;for(let i=0;i<=100;i++){sr=i}+"</td>";
+        temp += "<td>" + u.firm_name + "</td>";
+        temp += "<td>" + u.companys_licenece + "</td>";
+        temp += "<td>" + u.mobile + "</td>";
+        // temp += "<td>" + u.gasPrice + "</td>";
+        temp += "<td>" + u.carbonEmission + "</td>";
+        temp += "<td>" + u.email + "</td>";
+        // temp += "<td>" + "Account: <span class='showAccount'></span>" + "</td>";
+        temp += "<td >" + u.country + "</td>";
+        temp += "<td >" + u.status + "</td>";
+        temp += "<td><button class="+"btn btn-success"+" onClick=updateStatus("+JSON.stringify(u._id)+")> Verify </button></td>"
+        temp += "<td><button class="+"btn btn-danger"+" onClick=deleteFirm("+JSON.stringify(u._id)+")> Delete </button></td>"
+
+        // temp += "<td>"+ u.status+"</td>";
+      });
+      document.getElementById("tab").innerHTML = temp;
+    });
+  });
+</script>
+
+<div class="heading-row mb-20">
+  <div class="row align-item-center">
+    <div class="col-lg-6">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2"
+          ><i class="mdi mdi-account"></i
+        ></span>
+        Request
+      </h3>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <!-- <div class="card-header">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">From</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="datepicker"
+                  placeholder="Date"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">To</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="datepicker1"
+                  placeholder="Date"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <select id="select-new2" class="form-control">
+                <option>Amount</option>
+                <option>50,000</option>
+                <option>1,00,000</option>
+                <option>10,000</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <select id="select-new3" class="form-control">
+                <option>Balance</option>
+                <option>50,000</option>
+                <option>50,000</option>
+                <option>50,000</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+      </div> -->
+      <div class="card-body table-responsive">
+        <table class="table" id="example">
+          <thead>
+            <tr>
+              <th width="1%" class="border-top-0">S.No</th>
+              <th width="8%" class="border-top-0">Firm Name</th>
+              <th width="8%" class="border-top-0">Firm's License</th>
+              <th width="8%" class="border-top-0">Contact No.</th>
+              <!-- <th width="15%" class="border-top-0">Country</th> -->
+              <th width="7%" class="border-top-0">
+                Carbon Emission
+              </th>
+              
+              <th width="8%" class="border-top-0">Email</th>
+              <th width="8%" class="border-top-0">Country</th>
+              <th width="8%" class="border-top-0">Status</th>
+              <th width="8%" class="border-top-0">Update</th>
+              <th width="8%" class="border-top-0">Delete</th>
+             
+
+            </tr>
+          </thead>
+          <tbody id="tab"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('footer') -%>
+
+<script>
+  $(document).ready(function () {
+    $(".table").dataTable(
+      {
+    "bPaginate": false,
+    "bLengthChange": false,
+    "bFilter": false,
+    "bInfo": false,
+    "bAutoWidth": false }
+    );
+  });
+</script>
+
+<script src="user_assets/js/jquery.js"></script>
+
+<script src="user_assets/js/bootstrap.min.js"></script>
+<script src="user_assets/js/bootstrap-select.min.js"></script>
+<script src="user_assets/js/jquery.validate.min.js"></script>
+<script src="user_assets/js/owl.carousel.min.js"></script>
+<script src="user_assets/js/isotope.js"></script>
+<script src="user_assets/js/jquery.magnific-popup.min.js"></script>
+<script src="user_assets/js/waypoints.min.js"></script>
+<script src="user_assets/js/jquery.counterup.min.js"></script>
+<script src="user_assets/js/wow.min.js"></script>
+<script src="user_assets/js/jquery.easing.min.js"></script>
+<script src="user_assets/js/particles.min.js"></script>
+<script src="user_assets/js/particles-config.js"></script>
+<script src="user_assets/js/Chart.min.js"></script>
+<script src="user_assets/js/chart-config.js"></script>
+<script src="user_assets/js/custom.js"></script>

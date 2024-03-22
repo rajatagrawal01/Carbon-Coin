@@ -1,0 +1,126 @@
+<%- include('company-header') -%>
+<style>
+  .dataTable thead .sorting {
+    background-image:none!important;
+  }
+  .table.dataTable thead .sorting_asc{
+    background-image:none!important;
+    }
+    
+    .card-body .table td {word-break: break-all;
+    white-space: pre-wrap;}
+
+  </style>
+  <div class="heading-row mb-20">
+    <div class="row align-item-center">
+       <div class="col-lg-6">
+          <h3 class="page-title"><span class="page-title-icon bg-gradient-primary text-white mr-2"><i class="mdi mdi-file-document"></i></span>All Transactions </h3>
+       </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th width="2%">S No.</th>
+                <th width="20%">Transaction Hash</th>
+                <th width="15%">From Account</th>
+                <th width="15%">To Account</th>
+                <th width="6%">Value</th>
+                <th width="7%">Coin</th>
+                <!-- <th width="10%">Phone No.</th> -->
+              </tr>
+            </thead>
+            <tbody id="data">
+              
+                         
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('footer') -%>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  
+  <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js"></script>  
+
+  <script>
+    window.onload = async ()=>{
+      console.log(ethereum.isConnected());
+     if(!ethereum.isConnected()){
+       alert("MetaMask Not Connected");
+       window.location.href ="/company-dashboard"
+     }
+      
+      const provider = new ethers.providers.Web3Provider(web3.currentProvider);
+      console.log(provider);
+      userAddress = await ethereum.selectedAddress
+      fetchData(userAddress);
+    }
+
+    ethereum.on('accountsChanged', (accounts) => {
+      alert("Address changed",accounts)
+      location.reload();
+});
+
+    function fetchData(userAddress){
+      fetch(`https://api-ropsten.etherscan.io/api?module=account&action=tokentx&contractaddress=0xe57eae0d21827d599226c2cc06f8257af847aa41&address=${userAddress}&page=1&offset=100&startblock=0&endblock=27025780&sort=asc&apikey=YourApiKeyToken`).then(
+      res => {
+        res.json().then(
+          data => {
+            console.log(data);
+
+            data = data.result;
+            if (data.length > 0) {
+              var temp = "";
+              data.forEach(async (u, index) => {
+                let i = index + 1;
+                temp += "<tr>";
+                temp += "<td>" + i + "</td>";
+                // temp +="<td>"+u.sr=0 ;for(let i=0;i<=100;i++){sr=i}+"</td>";
+                temp += "<td><a href='https://ropsten.etherscan.io/tx/"+u.hash+"' target=_blank style='font-weight:500'>"+u.hash+ "</a></td>";
+                temp += "<td id='userAcc'>" + u.from + "</td>";
+                temp += "<td>" + u.to + "</td>";
+                // temp += "<td>" + u.gasPrice + "</td>";
+                temp += "<td id='bidValue'>" + u.value / 10 ** 18 + "</td>";
+                temp += "<td>" + u.tokenName + "</td>";
+
+                              
+				// temp += "<td>" + "Account: <span class='showAccount'></span>" + "</td>";
+				        
+                temp += "</tr>";                                                          
+				        temp += "</tr>";
+			})
+
+              document.getElementById("data").innerHTML = temp;
+            }
+          }
+
+        )
+      }
+    )
+
+    }
+
+    
+    
+  </script>
+
+  <script>
+$(document).ready( function () {
+  $('.table').DataTable(
+    {
+    "bPaginate": false,
+    "bLengthChange": false,
+    "bFilter": false,
+    "bInfo": false,
+    "bAutoWidth": false }
+  );
+} );
+</script>

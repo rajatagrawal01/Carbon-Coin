@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Karbun Coin</title>
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="user_assets/img/logo.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="user_assets/css/style.css" />
+    <link rel="stylesheet" href="user_assets/css/responsive.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #google_translate_element {
+        color: #fcbf10;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <style>
+    a {
+    color: #0f3923;
+    text-decoration: none;
+   }
+   div#WEB3_CONNECT_MODAL_ID{
+    z-index: 1000!important;
+    position: relative!important;
+   }
+   </style>
+    <style>
+      /* Button used to open the chat form - fixed at the bottom of the page */
+      .open-button {
+        background-color: #388855;
+        color: white !important;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 1;
+        position: fixed;
+        bottom: 10px;
+        right: 85px;
+        max-width: 250px;
+        border-radius: 10px;
+        z-index: 9999999999999999999;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        font-size: 18px;
+        font-weight: 600;
+        border: none !important;
+        outline: none !important;
+        /*animation: bounce 3s infinite;*/
+        white-space: normal;
+      }
+      /*@keyframes bounce {
+			  0%, 20%, 50%, 80%, 100% {
+			    transform: translateY(0);
+			  }
+			  40% {
+			    transform: translateY(-40px);
+			  }
+			  60% {
+			    transform: translateY(-20px);
+			  }
+			}*/
+
+      /* The popup chat - hidden by default */
+      .chat-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        /* 	border: 5px solid #000000; */
+        border-radius: 5%;
+        z-index: 9999999999999999999;
+        color: white;
+      }
+
+      /* Add styles to the form container */
+      .form-container {
+        max-width: 400px;
+        padding: 20px;
+        background-color: #e8fbf1;
+        border-radius: 15px;
+        /* opacity: 0.9; */
+        border: 2px solid #0f3923;
+      }
+      .form-container h1 {
+        color: #000;
+      }
+      .form-container label {
+        color: #000;
+      }
+      .form-container input {
+        background-color: transparent !important;
+        border: 2px solid #000 !important;
+        padding: 8px 10px;
+        height: auto;
+        color: #000 !important;
+        font-size: 16px;
+        outline: none !important;
+        box-shadow: none !important;
+      }
+      .form-container input::placeholder {
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      /* Set a style for the submit/send button */
+      .form-container .btn {
+        background-color: rgb(252 191 16);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        font-size: 20px;
+        display: block;
+        border: none !important;
+        outline: none !important;
+        color: #fff !important;
+      }
+
+      /* Add a red background color to the cancel button */
+      .form-container .cancel {
+        background-color: rgb(56 136 85);
+        border-radius: 5px;
+        display: block;
+      }
+
+      /* Add some hover effects to buttons */
+      .form-container .btn:hover,
+      .open-button:hover {
+        opacity: 1;
+      }
+
+	  .jYxAGf{
+		  z-index:9999 !important;
+	  }
+    .dKfWpB{
+      overflow:hidden;
+    }
+    </style>
+
+  </head>
+
+  <body class="active-preloader-ovh" style="top: 0 !important">
+    <div class="preloader">
+      <div class="spinner"></div>
+    </div>
+
+    <header class="header header-home-one">
+      <nav class="navbar navbar-default header-navigation stricky">
+        <div class="thm-container clearfix">
+          <div class="navbar-header">
+            <a
+              href="javascript:void(0);"
+              onclick="BuyEth()"
+              style="display: none"
+              class="for-mobile-show metamask-link"
+            >
+             <img
+                src="user_assets/img/meta-icon.png"
+                style="height: 35px; width: auto"
+              />
+               <small style="font-size: 12px; font-weight: 400"
+                >Connect wallet</small
+              >
+            </a>
+            
+            <button
+              type="button"
+              class="navbar-toggle collapsed bitmex-icon-menu"
+              data-toggle="collapse"
+              data-target=".main-navigation"
+              aria-expanded="false"
+            ></button>
+            <a class="navbar-brand" href="">
+              <img src="user_assets/img/logo.png" style="height: 80px" />
+            </a>
+          </div>
+
+          <div
+            class="collapse navbar-collapse main-navigation mainmenu"
+            id="main-nav-bar"
+          >
+            <ul class="nav navbar-nav navigation-box navbar-right">
+              <li><a href="#about">About Karbun</a></li>
+              <!--  <li><a href="#news">Karbun Partners</a> </li> -->
+              <li><a
+                  href="#"
+                  
+                  data-toggle="modal"
+                  data-target="#whitepaperModal"
+                  
+                  style="font-size: 16px" >Whitepaper</a>
+              </li>
+              <li><a href="#login">Join </a></li>
+              <li><a href="#our-experts">Team </a></li>
+              <li><a href="#roadmap">Roadmap</a></li>
+
+              <li><a href="#contact-us">Contact Karbun</a></li>
+              <li><a href="/terms">T&C</a></li>              
+                           
+                            
+
+              <li><a
+                href="/emission-impact"
+               
+                style="font-size: 16px" >Emission Dashboard</a>
+            </li>
+              <!-- <li><a href="/emission-impact">Emission Impact</a></li> -->
+
+
+              <li style="padding-top: 25px;padding-right:15px;" class="text/css">
+                <button id="google_translate_element"></button>
+
+                <div id="google_translate_element"></div>
+                <script>
+                  function googleTranslateElementInit() {
+                    new google.translate.TranslateElement(
+                      {
+                        pageLanguage: "en",
+                        autoDisplay: "true",
+                        layout:
+                          google.translate.TranslateElement.InlineLayout
+                            .HORIZONTAL,
+                      },
+                      "google_translate_element"
+                    );
+                  }
+                </script>
+                <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+                <style type="text/css">
+                  /*google translate Dropdown */
+                  #text{
+                    display:none;
+                  }
+
+                  #google_translate_element select {
+                    background: #1a874e !important;
+                    color: #fff;
+                    padding: 8px 10px;
+                    border: none;
+                    border-radius: 3px;
+                    height: auto !important;
+                  }
+
+                  /*google translate link | logo */
+                  .goog-logo-link {
+                    display: none !important;
+                  }
+                  .goog-te-gadget {
+                    color: transparent !important;
+                  }
+
+                  /* google translate banner-frame */
+
+                  .goog-te-banner-frame {
+                    display: none !important;
+                  }
+
+                  .skiptranslate.goog-te-gadget > div {
+                    display: block !important;
+                    width: 100% !important;
+                  }
+                  .goog-te-gadget {
+                    font-family: arial;
+                    font-size: 11px;
+                    color: #666;
+                    white-space: nowrap;
+                    max-height: 32px;
+                  }
+                </style>
+              </li>
+              <li class="xs-hide metamask-outer">
+                <a class="metamask-link" href="javascript:void(0);" onclick="BuyEth()">
+                  <img
+                    src="user_assets/img/meta-icon.png"
+                    style="height: 35px; width: auto"
+                  />
+                  <small style="font-size: 12px; font-weight: 400"
+                    >Connect wallet</small
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+      </nav>
+    </header>
+    <!-- /.header -->
+
+    <div
+      id="minimal-bootstrap-carousel"
+      class="carousel slide carousel-fade slider-home-one"
+      data-ride="carousel"
+    >
+      <!-- <video id="background-video" autoplay loop muted poster="user_assets/banner.mp4">
+		  <source src="user_assets/banner.mp4" type="video/mp4">
+		</video> -->
+      <div id="particles-js"></div>
+      <!-- /#particles-js -->
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active slide-1">
+          <div class="carousel-caption">
+            <div class="thm-container">
+             
+              <div class="box valign-middle">
+                <div class="content">
+                 
+                    <%if(error!=null){%>
+                      <strong><div class="alert alert-warning alert-dismissible">
+                        <a href="/" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
+                        <%=error%></strong>
+                      </div>
+                   
+                    <%}%>
+                    <%if(success!=null){%>
+                      <strong><div class="alert alert-success alert-dismissible">
+                        <a href="/" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <%=success%></strong>
+                      </div>
+                      <%}%>
+                   
+                  <div class="outer-glob-box">
+                   
+                    <img
+                      data-animation="animated fadeInUp"
+                      class="logo-outer-img"
+                      src="user_assets/img/videointogif.gif"
+                    />
+                    <img
+                      data-animation="animated fadeInUp"
+                      class="logo-tree-img"
+                      src="user_assets/img/logo-04.png"
+                    />
+                  </div>
+
+                  <!-- <h3 data-animation="animated fadeInUp">Karbun Biosphere</h3> -->
+
+                  <h4 data-animation="animated fadeInUp" class="orange-text">
+                    <!-- <span>Mother Earth is bleeding.</span> <br> -->
+                    "Solving Climate Change would be the most amazing thing
+                    humanity has ever done" <br />
+                    - Bill Gates
+                  </h4>
+                  <!-- <p data-animation="animated fadeInDown">
+									New Generation of Carbon Credit Trading via Digital Ledger
+									Accounting and Payment Solution for pre-eminent Global
+									emission controls.
+								</p>
+								<a href="/buy-coin" class="thm-btn" data-animation="animated fadeInDown">Get Started</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="item slide-2">
+				<div class="carousel-caption">
+					<div class="thm-container">
+						<div class="box valign-middle">
+							<div class="content">
+								<img data-animation="animated fadeInUp" class="logo-tree-img"
+									src="user_assets/img/logo-04.png" />
+								<h3 data-animation="animated fadeInUp">
+									Earn With Karbun (KBN)
+								</h3>
+								<p data-animation="animated fadeInDown">
+									You can earn more with this crypto coin of Karbun Coin as it
+									provides investors with a huge chance to buy/bid.
+								</p>
+								<a href="/buy-coin" class="thm-btn" data-animation="animated fadeInDown">Get Started</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+      </div>
+      <!-- Controls -->
+      <!-- 	<a class="left carousel-control" href="#minimal-bootstrap-carousel" role="button" data-slide="prev">
+			<i class="fa fa-angle-left"></i>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#minimal-bootstrap-carousel" role="button" data-slide="next">
+			<i class="fa fa-angle-right"></i>
+			<span class="sr-only">Next</span>
+		</a>
+
+		<ul class="carousel-indicators list-inline custom-navigation">
+			<li data-target="#minimal-bootstrap-carousel" data-slide-to="0" class="active"></li>
+			
+			<li data-target="#minimal-bootstrap-carousel" data-slide-to="1"></li>
+		</ul> -->
+    </div>
+
+    <section class="fun-fact-style-one dark-bg sec-pad" id="section" onclick="closeForm()">
+      <div class="thm-container">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="single-fun-fact-style-one text-center">
+              <!-- <i class="bitmex-icon-coin"></i> -->
+              <div class="fun-icon">
+                <img src="user_assets/img/co2.png" />
+              </div>
+              <p>Total CO2 absorbed</p>
+              <h3 class="counter">8980</h3>
+            </div>
+            <!-- /.single-fun-fact-style-one text-center -->
+          </div>
+          <!-- /.col-md-3 -->
+          <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="single-fun-fact-style-one text-center">
+              <!-- <i class="bitmex-icon-wallet"></i> -->
+              <div class="fun-icon">
+                <img src="user_assets/img/certificate.png" />
+              </div>
+
+              <p>Certificates Issued </p>
+              <h3 class="counter">7540</h3>
+            </div>
+            <!-- /.single-fun-fact-style-one text-center -->
+          </div>
+          <!-- /.col-md-3 -->
+          <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="single-fun-fact-style-one text-center">
+              <!-- <i class="bitmex-icon-like"></i> -->
+              <div class="fun-icon">
+                <img src="user_assets/img/planting.png" />
+              </div>
+
+              <p>Total trees planted</p>
+              <h3 class="counter">9260</h3>
+            </div>
+            <!-- /.single-fun-fact-style-one text-center -->
+          </div>
+          <!-- /.col-md-3 -->
+           <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="single-fun-fact-style-one text-center">
+              <!-- <i class="bitmex-icon-like"></i> -->
+              <div class="fun-icon">
+                <img src="user_assets/img/browser.png" />
+              </div>
+
+              <p>Website Visitors</p>
+              <h3 class="counter">9260</h3>
+            </div>
+            <!-- /.single-fun-fact-style-one text-center -->
+          </div>
+          <!-- /.col-md-3 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.thm-container -->
+    </section>
+    <!-- /.fun-fact-style-one -->
+
+    <section class="how-it-works-btn-strip sec-pad" onclick="closeForm()">
+      <div class="thm-container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div class="btn-row-link text-center">
+              <h3>
+                <b
+                  >Volunteer to the Karbun-Army.<br>
+				   A force for good to save Mother Earth</b
+                >
+              </h3>
+
+              <a
+                class="thm-btn yellow-bg-hvr green-btn-new"
+                href="/buy-coin"
+                style="width: auto"
+                >Join Karbun</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-style-one gray-bg sec-pad page-section" id="about" onclick="closeForm()">
+      <div class="thm-container">
+        <div class="row align-items-center">
+          <!-- /.col-md-6 -->
+          <div class="col-md-6">
+            <div class="about-style-one-content">
+              <h3 class="color-white">Carbon Market Challenges</h3>
+              <ul class="chalanges-list">
+                <li>
+                  <div class="text-center inner-box-chalanges">
+                    <img src="user_assets/img/chalange1.jpg" />
+                    <div class="title">
+                      The world is producing 51B+ tonnes of CO2 emissions every
+                      year and the volume is growing
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="text-center inner-box-chalanges">
+                    <img src="user_assets/img/chalange2.jpg" />
+                    <div class="title">
+                      There are large variations in the global price of Carbon
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="text-center inner-box-chalanges">
+                    <img src="user_assets/img/chalange3.jpg" />
+                    <div class="title">
+                      Currently there is a lack of automation to connect carbon
+                      emitters to viable Green Projects
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="text-center inner-box-chalanges">
+                    <img src="user_assets/img/chalange4.jpg" />
+                    <div class="title">
+                      GHG producers want to go carbon neutral/negative. However,
+                      there is no reliable, global set formula to guide and
+                      inform them of how to contribute efficiently without
+                      significant 3rd party costs and lengthy delays
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-md-5 col-md-offset-1">
+            <div class="about-style-one-content">
+              <h3 class="color-white">Karbun Platform</h3>
+              <p class="color-white">
+                Karbun is a new-age all-encompassing Distributed Ledger Climate
+                Accounting and Payment Platform that unifies all Environmental
+                stakeholders including- Governments, Energy Trading platforms,
+                Corporates, Investors and Citizens for a consolidated approach
+                towards tackling Climate Control endeavours with a special focus
+                on Carbon market unification for achieving worldwide Carbon
+                neutrality.
+              </p>
+            </div>
+            <!-- /.about-style-one-content -->
+          </div>
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.thm-container -->
+    </section>
+    <!-- /.about-style-one -->
+
+    <section class="benefit-sec sec-pad pb-0">
+      <div class="thm-container">
+        <div class="sec-title text-center">
+          <span class="">Process</span>
+          <h3 class="">How It Works</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="benefit-list">
+              <li>
+                <div class="benefit-points">
+                  <div class="inner">
+                    <h3><span class="num"></span></h3>
+                    <div class="step-process">
+                      <h4>
+                        <div>
+                          <span
+                            >Measure your carbon emissions utilizing global best
+                            practices to obtain your emissions data</span
+                          >
+                          <br />
+                          <ul class="benefit-inner-list">
+                            <li>
+                              Select the company you wish to offset your carbon
+                              emissions with
+                            </li>
+                            <li>
+                              Buy KARBUNCoins (KBN) to enable you to transact
+                            </li>
+                            <li>
+                              Pay your offsets with KBN and receive your offset
+                              certificates
+                            </li>
+                          </ul>
+                        </div>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-points">
+                  <div class="inner">
+                    <h3><span class="num"></span></h3>
+                    <div class="step-process">
+                      <h4>
+                        <div>
+                          <span> How to stake KBN to earn rewards </span>
+                          <br />
+                          <ul class="benefit-inner-list">
+                            <li>Buy KBN StableCoin</li>
+                            <li>
+                              Stake your KBN via our unique DeFi platform to
+                              earn staking rewards
+                            </li>
+                          </ul>
+                        </div>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="benefit-points">
+                  <div class="inner">
+                    <h3><span class="num"></span></h3>
+                    <div class="step-process">
+                      <h4>
+                        <div>
+                          <span>How to earn in the KARBUN Liquidity Pool</span>
+                          <br />
+                          <ul class="benefit-inner-list">
+                            <li>
+                              Join KARBUN’s Liquidity Provider Pool to earn KBN
+                              tokens and benefit from every transaction
+                              completed in the Liquidity Pool
+                            </li>
+                          </ul>
+                        </div>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.thm-container -->
+    </section>
+    <!-- /.how-it-works -->
+
+    <section class="how-it-works sec-pad page-section pt-0" id="how-it-works" onclick="closeForm()">
+      <div class="thm-container">
+        <!-- /.sec-title text-center -->
+        <div class="row text-justify">
+          <div class="col-md-4">
+            <p style="margin-top: 60px">
+              In this project, different stakeholders involved are “Generators”
+              of carbon credits (i.e., wind farms, tree-planting operations, CO2
+              sequestration projects, etc.) and “Consumers” of carbon credit
+              (i.e., carbon emitters or polluters of any kind such as the energy
+              industry) as well as other stakeholders such as regulators,
+              concerned citizens, and validators. “Validators” are an essential
+              part of this ecosystem. They are accredited, globally distributed,
+              technically competent consultants who are incentivized to
+              parameterize appropriately and onboard projects to an open
+              architecture marketplace that matches interested parties
+              generating and retiring carbon credits.
+            </p>
+          </div>
+          <div class="col-md-8">
+            <div class="img-box">
+              <img
+                src="user_assets/img/how-it-works.jpg"
+                class="img-responsive"
+              />
+            </div>
+          </div>
+          <div class="col-md-12">
+            <p>
+              We will onboard Karbun to the platform as a stable coin at USD18,
+              equivalent to 1 Tonne of Carbon credits currently in USA. Karbun
+              will be distributed to carbon credit generators after formal
+              validation of their projects. Buyers and sellers of Karbun will
+              use a decentralized exchange platform (DeX) created within the
+              Karbun Ecosystem. This DeX will be utilized to swap Karbun against
+              ETH/BTC/BNB/ZKT. The liquidity providers in the Exchange platform
+              will earn 0.2% of the transaction fees and 0.05% of the fees will
+              go to the Karbun platform wallet. The emitters will buy NFT based
+              certificates (approved by Generator and Government Regulator)
+              against Karbun Coin, KBN. The generator will receive KBN. The
+              platform deducts a transaction charge for enabling the
+              transaction. The generator can swap KBN anytime on the DeX as per
+              above.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.how-it-works -->
+
+    <section class="how-it-works-btn-strip sec-pad join-btn-sec page-section" id="login">
+      <div class="thm-container">
+        <div class="sec-title text-center">
+          <h3>Join Karbun </h3>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div class="btn-row-link text-center">
+              <a
+                data-toggle="modal"
+                class="thm-btn yellow-bg-hvr green-btn-new"
+                href="/buy-coin"
+                >Buy KARBUN Coin (KBN)</a
+              >
+              <!-- <a
+                data-toggle="modal"
+                class="thm-btn yellow-bg-hvr green-btn-new"
+                href="/register-tree-form"
+                >Register your Decarbisation Company</a> -->
+                <a
+                  href="#"
+                  data-toggle="modal"
+                class="thm-btn yellow-bg-hvr green-btn-new"
+                data-target="#registertreeModal" 
+                  style="font-size: 16px" > Are You Decarbonisation Company</a>
+                  <a
+                  href="#"
+                  data-toggle="modal"
+                class="thm-btn yellow-bg-hvr green-btn-new"
+                data-target="#registerModal" 
+                  style="font-size: 16px" >Buy Carbon Credits</a>
+              <!-- <a
+                data-toggle="modal"
+                class="thm-btn yellow-bg-hvr green-btn-new"
+                data-target="#registerModal" 
+                >Buy Carbon Credits</a> -->
+              <a
+                data-toggle="modal"
+                data-target=".coming-modal-Modal"
+                class="thm-btn yellow-bg-hvr green-btn-new"
+                href=""
+                >Buy KBN to invest in Green Projects</a
+              >
+              <a
+                data-toggle="modal"
+                data-target=".coming-modal-Modal"
+                class="thm-btn yellow-bg-hvr green-btn-new"
+                href=""
+                >Use case/startups apply for funding</a
+              >
+              <a
+                data-toggle="modal"
+                data-target=".coming-modal-Modal"
+                class="thm-btn yellow-bg-hvr green-btn-new"
+                href=""
+                >Join the Karbun-Army</a
+              >
+              
+            </div>
+          </div>
+        </div>
+        <!-- <p style="color: #000;text-align: center;font-size: 18px;margin: 20px 0;">"Solving climate change would be the most amazing thing humanity has ever done" - Bill Gates</p> -->
+      </div>
+    </section>
+
+    <section
+      class="team-style-one sec-pad page-section team-section-new-changes"
+      id="our-experts"
+      onclick="closeForm()"
+    >
+      <div class="thm-container">
+        <div class="sec-title text-center">
+          <span class="orange-text">Meet our Team</span>
+          <h3 class="color-white">Karbun Bioshpere Experts</h3>
+        </div>
+        <!-- /.sec-title text-center -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="single-team-style-one hvr-float-shadow">
+                  <div class="img-box">
+                    <img src="user_assets/img/John.jpeg" alt="Awesome Image" />
+                    <a href="#" class="fa fa-linkedin"></a>
+                  </div>
+                  <!-- /.img-box -->
+                  <div class="text-box text-center">
+                    <h3>John Sajadi</h3>
+                    <p>Founder</p>
+                  </div>
+                  <!-- /.text-box -->
+                </div>
+                <!-- /.single-team-style-one -->
+              </div>
+              <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="single-team-style-one hvr-float-shadow">
+                  <div class="img-box">
+                    <img
+                      src="user_assets/img/wouter.jpeg"
+                      alt="Awesome Image"
+                    />
+                    <a href="#" class="fa fa-linkedin"></a>
+                  </div>
+                  <!-- /.img-box -->
+                  <div class="text-box text-center">
+                    <h3>Wauter Raasveldt</h3>
+
+                    <p>Venture Capital Specialist</p>
+                  </div>
+                  <!-- /.text-box -->
+                </div>
+                <!-- /.single-team-style-one -->
+              </div>
+              <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="single-team-style-one hvr-float-shadow">
+                  <div class="img-box">
+                    <img src="user_assets/img/nikesh.jpg" alt="Awesome Image" />
+                    <a href="#" class="fa fa-linkedin"></a>
+                  </div>
+                  <!-- /.img-box -->
+                  <div class="text-box text-center">
+                    <h3>Nikesh Lalchandani</h3>
+
+                    <p>IT & Finance Head</p>
+                  </div>
+                  <!-- /.text-box -->
+                </div>
+                <!-- /.single-team-style-one -->
+              </div>
+              <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="single-team-style-one hvr-float-shadow">
+                  <div class="img-box">
+                    <img src="user_assets/img/David.jpg" alt="Awesome Image" />
+                    <a href="#" class="fa fa-linkedin"></a>
+                  </div>
+                  <!-- /.img-box -->
+                  <div class="text-box text-center">
+                    <h3>David Evans</h3>
+                    <p>Director-Marketing</p>
+                  </div>
+                  <!-- /.text-box -->
+                </div>
+                <!-- /.single-team-style-one -->
+              </div>
+              <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="single-team-style-one hvr-float-shadow">
+                  <div class="img-box">
+                    <img src="user_assets/img/Steve.jpg" alt="Awesome Image" />
+                    <a href="#" class="fa fa-linkedin"></a>
+                  </div>
+                  <!-- /.img-box -->
+                  <div class="text-box text-center">
+                    <h3>Steve Dew</h3>
+
+                    <p>Karbun Commercial Operations</p>
+                  </div>
+                  <!-- /.text-box -->
+                </div>
+                <!-- /.single-team-style-one -->
+              </div>
+
+              <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="single-team-style-one hvr-float-shadow">
+                  <div class="img-box">
+                    <img src="user_assets/img/alok.png" alt="Awesome Image" />
+                    <a href="#" class="fa fa-linkedin"></a>
+                  </div>
+                  <!-- /.img-box -->
+                  <div class="text-box text-center">
+                    <h3>Alok Agrawal</h3>
+
+                    <p>CTO</p>
+                  </div>
+                  <!-- /.text-box -->
+                </div>
+                <!-- /.single-team-style-one -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.thm-container -->
+    </section>
+    <!-- /.team-style-one sec-pad -->
+
+    <section class="sec-pad sec-pie" onclick="closeForm()">
+      <div class="thm-container">
+        <div class="sec-title text-center">
+          <span>Coin Distribution</span>
+          <h3>Tokenomics</h3>
+        </div>
+        <!-- /.sec-title text-center -->
+        <div class="row align-item-center mt-5">
+          <div class="col-md-6">
+            <div style="margin-top: 30px">
+              <img src="user_assets/img/Chart.png" class="img-responsive" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-side-table">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th width="60%">Description</th>
+                    <th width="40%">In Million</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Total Supply</td>
+                    <td>1,000,000,000 tokens</td>
+                  </tr>
+                  <tr>
+                    <td>Private Sale</td>
+                    <td>20,000,000 tokens</td>
+                  </tr>
+                  <tr>
+                    <td>ICO</td>
+                    <td>30,000,000 tokens</td>
+                  </tr>
+                  <tr>
+                    <td>IEO or Venture raise</td>
+                    <td>50,000,000 tokens</td>
+                  </tr>
+                  <tr>
+                    <td>Public Exchange Listing</td>
+                    <td>300,000,000 tokens</td>
+                  </tr>
+                  <tr>
+                    <td>Partners</td>
+                    <td>100,000,000 tokens</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Staking, DeFi & Investment Protocol(All swaps and mining
+                      rewards)
+                    </td>
+                    <td>200,000,000 tokens</td>
+                  </tr>
+                  <tr>
+                    <td>Management Team</td>
+                    <td>100,000,000 tokens</td>
+                  </tr>
+                  <tr>
+                    <td>R&D</td>
+                    <td>50,000,000 tokens</td>
+                  </tr>
+                  <tr>
+                    <td>Reserve</td>
+                    <td>150,000,000 tokens</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="roadmap-sec sec-pad page-section" id="roadmap" onclick="closeForm()">
+      <div class="thm-container">
+        <div class="sec-title text-center">
+          <span class="orange-text">Timeline</span>
+          <h3 class="color-white">Roadmap</h3>
+        </div>
+        <!-- /.sec-title text-center -->
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <ul class="road-map-list">
+                <li>
+                  <div>
+                    <h4>
+                      1. <br />
+                      Prototype and <br />
+                      Whitepaper
+                    </h4>
+                    <h6><i class="fa fa-time"></i> Jan - Dec 2021</h6>
+                    <p>
+                      Build ICO Platform.<br />
+                      Complete Prototype.<br />
+                      Complete Whitepaper.<br />
+                      Complete Litepaper. 1 Dec 2022<br />
+                      Pitch Deck. 1 Dec 2022
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>
+                      2. <br />
+                      StableCoin, DeFi, <br />
+                      Impact Investing
+                    </h4>
+                    <h6><i class="fa fa-time"></i> Feb 2022</h6>
+                    <p>
+                      StableCoin listing in Exchange Pair with USDT, BNB, ETH,
+                      BTC, ZKT DeFi Platform Impact Investment Uploaded in
+                      Hacton.io, CoinGecko, CoinMarketCap, Uniswap, Sushiswap
+                      Launch in Ethereum mainnet.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>
+                      3. <br />
+                      Carbon Trading <br />
+                      Platform
+                    </h4>
+                    <h6><i class="fa fa-time"></i> Mar 2022</h6>
+                    <p>Development of Carbon Credit Platform</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>
+                      4. <br />Link Decentralized <br />
+                      to Centralized
+                    </h4>
+                    <h6><i class="fa fa-time"></i> Apr - Jun 2022</h6>
+                    <p>
+                      Develop on Riple and Paytube<br />
+                      Link to Banks Credit card Solutions<br />
+                      Create use Cases
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <img
+                src="user_assets/img/rodmap-mobile.png"
+                style="display: none"
+                class="img-responsive roadmap-mobile"/>
+            </div>
+            <!-- <img src="user_assets/img/roadmap.jpg" /> -->
+          </div>
+          <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+        <div class="text-center" style="margin-top: 20px">
+          <a
+            href=""
+            target="_blank"
+            data-toggle="modal"
+            data-target="#whitepaperModal"
+            class="thm-btn yellow-bg-hvr"
+            class="download-paper-link"
+            style="font-size: 16px"
+            >Download Whitepaper</a>
+            
+          
+        </div>
+      </div>
+      <!-- /.thm-container -->
+    </section>
+    <!-- /.how-it-works -->
+
+    <section class="fun-fact-style-one sec-pad" onclick="closeForm()">
+      <div class="thm-container">
+       <!--  <div class="sec-title text-center">
+          <h3 class="mb-3">Target KARBUN Partners</h3>
+        </div> -->
+        <!-- /.sec-title text-center -->
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="partner-list">
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner9.png" />
+                </div>
+              </li>
+               <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner11.png" />
+                </div>
+              </li>
+              
+             
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner12.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner13.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner14.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner15.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner16.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner17.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/patner18.jpg" />
+                </div>
+              </li>
+               <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner19.jpg" />
+                </div>
+              </li>
+               <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner20.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner21.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner22.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner23.png" />
+                </div>
+              </li>
+
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner10.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner1.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner2.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner3.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner4.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner5.jpg" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner6.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner7.png" />
+                </div>
+              </li>
+              <li>
+                <div class="single-fun-fact-style-one text-center">
+                  <img src="user_assets/img/partner8.png" />
+                </div>
+              </li>
+              
+              
+            </ul>
+          </div>
+          <!-- /.col-md-3 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.thm-container -->
+    </section>
+    <!-- /.fun-fact-style-one -->
+
+    <div class="footer-top page-section" id="contact-us">
+      <div class="thm-container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="single-footer-top">
+              <!-- <p>
+                <i class="bitmex-icon-envelope"></i
+                ><span>Email: </span>sales@karbun.io
+              </p> -->
+              <p> <i class="bitmex-icon-envelope"></i><a href="mailto:sales@karbun.io"> email:  sales@karbun.io</a></p>
+
+            </div>
+            <!-- /.single-footer-top -->
+          </div>
+          <!-- /.col-md-4 -->
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="single-footer-top">
+              <p>
+                <i class="bitmex-icon-phone-call"></i
+                ><span>Call: </span> +61415898818
+              </p>
+            </div>
+            <!-- /.single-footer-top -->
+          </div>
+          <!-- /.col-md-4 -->
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <div class="single-footer-top">
+              <p>
+                <i class="bitmex-icon-placeholder"></i
+                ><span>Web: </span>www.karbun.io
+              </p>
+            </div>
+            <!-- /.single-footer-top -->
+          </div>
+          <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.thm-container -->
+    </div>
+    <!-- /.footer-top -->
+
+    <div class="footer-bottom">
+      <div class="thm-container clearfix">
+        <div class="pull-left copy-text">
+          <p>&copy;<span id="copyright">
+            <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+        </span>Karbun.io All rights reserved.</p>
+        </div>
+        <!-- /.pull-left copy-text -->
+        <div class="social pull-right">
+           <a href="https://web.telegram.org" target="_blank" class="fa fa-telegram"></a>
+
+          <a href="https://twitter.com"  target="_blank" class="fa fa-twitter"></a>
+          <!--
+				--><a href=" https://www.facebook.com"target="_blank" class="fa fa-facebook"></a>
+          <!--
+				--><a href=" https://in.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+       
+
+        <a href="https://instagram.com" target="_blank" class="fa fa-instagram"></a>
+        </div>
+        <!-- /.social -->
+      </div>
+      <!-- /.thm-container -->
+    </div>
+    <!-- /.footer-bottom -->
+    
+
+    
+
+    <section class="hidden-sidebar side-navigation" onclick="closeForm()">
+      <a href="#" class="close-button side-navigation-close-btn fa fa-times"></a
+      ><!-- /.close-button -->
+      <div class="sidebar-content">
+        <div class="social">
+          <a href="#" class="fa fa-telegram"></a>
+
+          <a href="#" class="fa fa-twitter"></a>
+          <!--
+				--><a href="#" class="fa fa-facebook"></a>
+         <a href="#" class="fa fa-linkedin"></a>
+         
+        <a href="#" class="fa fa-instagram"></a>
+        </div>
+        <!-- /.social -->
+      </div>
+      <!-- /.sidebar-content -->
+    </section>
+    
+    <!-- /.hidden-sidebar -->
+
+    <button class="open-button btn btn-outline-primary" onclick="openForm()">
+      Donate to your favourite Green project
+    </button>
+   
+    <div class="chat-popup" id="myForm">
+      <div class="form-container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 id="donate" class="text-center text-uppercase">
+              <b>Donate</b>
+            </h1>
+            <div class="">
+              <label>Buy :-</label>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="bidding"
+                      onkeyup="myChangeFunction(bidding)"
+                      placeholder="USD"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="ethbidding"
+                      placeholder="ETH"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Karbun Wallet Address</label>
+                  <input
+                    class="form-control input-lg"
+                    id="add"
+                    type="text"
+                    value="0xF24a24Ab64a29edd50ACC655f4dd78360888A83e"
+                    readonly
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="btn-block">
+              <!-- <button type="submit" class="thm-btn yellow-bg-hvr">Submit</button> -->
+              <!-- <button class="enableEthereumButton btn">Enable Ethereum</button> -->
+              <button
+                class="btn thm-btn green-bg-hvr"
+                id="grad2"
+                onclick="bidNow()"
+              >
+                Send 
+              </button>
+              <button
+                type="btn"
+                class="btn cancel"
+                onclick="closeForm()"
+                id="grad1"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade comming-soon-popup coming-modal-Modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div>
+              <h2>Coming Soon....!!!</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade comming-soon-popup"
+      id="whitepaperModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+     
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="whitepaper-form">
+              <h2>
+                Please enter your email address to download the whitepaper.
+              </h2>
+              <form target="_blank" method="POST" action="whitepaper">
+                <div class="form-group">
+                  <label>Email address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id=""
+                    placeholder="Enter email"
+                    required
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  class="thm-btn yellow-bg-hvr"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade comming-soon-popup "
+      id="registertreeModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="">
+              <h2>
+                LOGIN
+              </h2>
+              <form method="POST" action="/decarbinationCompanyLogin">
+                <div class="form-group">
+                  <label style="color:white">Email address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id=""
+                    placeholder="Enter email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label  style="color:white">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    id=""
+                    placeholder="Enter password"
+                    required
+                  />
+                </div>
+                <a style="color:white" href="/forgot-pass-company">Forgot Password?</a>
+                <br>
+                <input
+                  type="submit"
+                  class="thm-btn yellow-bg-hvr">
+              </input>
+                <br>
+                <a
+                data-toggle="modal"
+                class="thm-btn yellow-bg-hvr green-btn-new"
+                href="/register-tree-form"
+                >Register your Decarbisation Company</a>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Modal -->
+     <div
+     class="modal fade comming-soon-popup "
+     id="registerModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true"
+   >
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-body">
+           <button
+             type="button"
+             class="close"
+             data-dismiss="modal"
+             aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+           <div class="">
+             <h2>
+               LOGIN
+             </h2>
+             <form method="POST" action="/firmlogin">
+               <div class="form-group">
+                 <label style="color:white">Email address</label>
+                 <input
+                   type="email"
+                   name="email"
+                   class="form-control"
+                   id=""
+                   placeholder="Enter email"
+                   required
+                 />
+               </div>
+               <div class="form-group">
+                 <label  style="color:white">Password</label>
+                 <input
+                   type="password"
+                   name="password"
+                   class="form-control"
+                   id=""
+                   placeholder="Enter password"
+                   required
+                 />
+               </div>
+               <a style="color:white" href="/forgot-pass-firm">Forgot Password?</a>
+               <br>
+               <input
+                 type="submit"
+                 class="thm-btn yellow-bg-hvr">
+              </input>
+               <br>
+               <a
+               data-toggle="modal"
+               class="thm-btn yellow-bg-hvr green-btn-new"
+               href="/register-form" style="width:300px"
+               >Register your credits</a>
+
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+<!--Modal-->
+   <div
+   class="modal fade comming-soon-popup"
+   id="whiteCarbonCalculator"
+   tabindex="-1"
+   role="dialog"
+   aria-labelledby="exampleModalLabel"
+   aria-hidden="true"
+ >
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-body">
+         <button
+           type="button"
+           class="close"
+           data-dismiss="modal"
+           aria-label="Close"
+         >
+           <span aria-hidden="true">&times;</span>
+         </button>
+         <div class="whitepaper-form">
+           <h2>
+             Please enter your Website URL to calculate Carbon Emission.
+           </h2>
+           <form method="POST" action="emission-pass">
+             <div class="form-group">
+               <label>Enter Website URL</label>
+               <input
+                 type="url"
+                 name="url"
+                 class="form-control"
+                 id=""
+                 placeholder="Enter URL"
+                 required
+               />
+             </div>
+
+             <button
+               
+               type="submit"
+               class="thm-btn yellow-bg-hvr"
+             >
+               Submit
+             </button>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+     <!-- href="user_assets/Karbun-Coin-Whitepaper.pdf" -->
+    <div class="scroll-to-top scroll-to-target" data-target="html">
+      <i class="fa fa-angle-up"></i>
+    </div>
+
+    <script src="user_assets/js/jquery.js"></script>
+
+    <script src="user_assets/js/bootstrap.min.js"></script>
+    <script src="user_assets/js/bootstrap-select.min.js"></script>
+    <script src="user_assets/js/jquery.validate.min.js"></script>
+    <script src="user_assets/js/owl.carousel.min.js"></script>
+    <script src="user_assets/js/isotope.js"></script>
+    <script src="user_assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="user_assets/js/waypoints.min.js"></script>
+    <script src="user_assets/js/jquery.counterup.min.js"></script>
+    <script src="user_assets/js/wow.min.js"></script>
+    <script src="user_assets/js/jquery.easing.min.js"></script>
+    <script src="user_assets/js/particles.min.js"></script>
+    <script src="user_assets/js/particles-config.js"></script>
+    <script src="user_assets/js/Chart.min.js"></script>
+    <script src="user_assets/js/chart-config.js"></script>
+    <script src="user_assets/js/custom.js"></script>
+
+    <script>
+      
+
+    </script>
+
+    
+    <script>
+      jQuery(function($) {
+      $('a[href*="#"]:not([href="#"])').click(function() {
+          var target = $(this.hash);
+            $('html,body').stop().animate({
+              scrollTop: target.offset().top - 110
+            }, 'linear');   
+      });    
+        if (location.hash){
+        var id = $(location.hash);
+        }
+        $(window).on('load', function() {
+        if (location.hash){
+            $('html,body').animate({scrollTop: id.offset().top -110}, 'linear')
+        };
+        });
+    });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("ul.navigation-box li a").click(function () {
+          $("ul.navigation-box li a").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+      $(".navbar-collapse a").click(function () {
+        $(".navbar-collapse").collapse("hide");
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+    <script>
+      $(".slider-banner").slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              arrows: false,
+            },
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              arrows: false,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows: false,
+            },
+          },
+        ],
+      });
+    </script>
+
+    <script>
+      async function getAccount() {
+        accountsLocal = await ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        accounts = accountsLocal[0];
+        $(".hidden_address").val(accounts);
+        return accounts;
+      }
+    </script>
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("ul.navigation-box li a").click(function () {
+          $("ul.navigation-box li a").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
+
+    <script>
+      function initializeFileUploads() {
+        $(".file-upload").change(function () {
+          var file = $(this).val();
+
+          var parts = file.split("\\");
+          var lastpart = parts[parts.length - 1];
+          //alert("file"+lastpart);
+          $(this)
+            .closest(".input-group")
+            .find(".file-upload-text")
+            .val(lastpart);
+        });
+        $(".file-upload-btn").click(function () {
+          $(this).find(".file-upload").trigger("click");
+        });
+        $(".file-upload").click(function (e) {
+          e.stopPropagation();
+        });
+      }
+
+      // On document load:
+      $(function () {
+        initializeFileUploads();
+      });
+    </script>
+    <script>
+      function myChangeFunction(bidding) {
+        var ethbiddings = document.getElementById("ethbidding");
+        ethbiddings.value = bidding.value * 0.00023755;
+      }
+    </script>
+    <script>
+      function decimalToHexString(number) {
+        if (number < 0) {
+          number = 0xffffffff + number + 1;
+        }
+        return number.toString(16).toUpperCase();
+      }
+
+      const ethereumButton = document.querySelector(".enableEthereumButton");
+      const sendEthButton = document.querySelector(".sendEthButton");
+
+      let accounts = [];
+
+      //Sending Ethereum to an address
+      sendEthButton.addEventListener("click", () => {
+        getAccount();
+
+        async function getAccount() {
+          accounts = await ethereum.request({ method: "eth_requestAccounts" });
+        }
+        var bid = document.getElementById("bidding").value;
+        console.log(bid);
+        ethereum
+          .request({
+            method: "eth_sendTransaction",
+            params: [
+              {
+                from: accounts[0],
+                to: "0xF24a24Ab64a29edd50ACC655f4dd78360888A83e",
+                value: decimalToHexString(bid * 0.00023755 * 10 ** 18),
+                gasPrice: "",
+                gas: "",
+              },
+            ],
+          })
+          .then((txHash) => console.log(txHash))
+          .catch((error) => console.error);
+      });
+    </script>
+
+    <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+    <script type="text/javascript"src="https://unpkg.com/evm-chains/lib/index.js"
+    ></script>
+    <script type="text/javascript"src="https://unpkg.com/@walletconnect/web3-provider"></script>
+    <script src="https://rawgit.com/ethereumjs/browser-builds/master/dist/ethereumjs-abi/ethereumjs-abi-0.6.5.js"></script>
+    <script src="https://rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script type="text/javascript" src="ethereumjs-tx.js"></script>
+    <script type="text/javascript" src="ethereumjs-common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereumjs/browser-builds/dist/ethereumjs-tx/ethereumjs-tx-1.3.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      // Unpkg imports
+      const Web3Modal = window.Web3Modal.default;
+      const WalletConnectProvider = window.WalletConnectProvider.default;
+      const EvmChains = window.EvmChains;
+      const Fortmatic = window.Fortmatic;
+
+      // Web3modal instance
+      let web3Modal;
+
+      // Chosen wallet provider given by the dialog window
+      let provider;
+
+      // Address of the selected account
+      let selectedAccount;
+
+      /**
+       * Setup the orchestra
+       */
+      function init() {
+        console.log("Initializing example");
+        console.log("WalletConnectProvider is", WalletConnectProvider);
+        // console.log("Fortmatic is", Fortmatic);
+
+        // Tell Web3modal what providers we have available.
+        // Built-in web browser provider (only one can exist as a time)
+        // like MetaMask, Brave or Opera is added automatically by Web3modal
+        const providerOptions = {
+          walletconnect: {
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                3: "https://ropsten.infura.io/v3/5e1b7d94f4784e86a1b2511857f15287",
+              },
+              network: "ropsten",
+              chainId: 3,
+              // infuraId: "bnb1a5cae5d9hp0we9cx9v02n9hvmt94nnuguv0fav",
+            },
+          },
+        };
+
+        web3Modal = new Web3Modal({
+          cacheProvider: false, // optional
+          providerOptions, // required
+        });
+      }
+
+      function BuyEth() {
+        startBuy();
+      }
+      async function startBuy() {
+        // console.log("Opening a dialog", web3Modal);
+        try {
+          provider = await web3Modal.connect();
+        } catch (e) {
+          console.log("Could not get a wallet connection", e);
+          return;
+        }
+
+        // Subscribe to accounts change: If the account is changed, the transactions goes on those accounts
+        // provider.on("accountsChanged", (accounts) => {
+        //     BuyToken();
+        // });
+
+        // Subscribe to chainId change
+        // provider.on("chainChanged", (chainId) => {
+        //     //BuyContent();
+        //     BuyToken();
+        // });
+
+        await resetAccountDataAll();
+      }
+      init();
+
+      async function resetAccountDataAll() {
+        await BuyToken(provider);
+      }
+
+      function decimalToHexString(number) {
+        if (number < 0) {
+          number = 0xffffffff + number + 1;
+        }
+        return number.toString(16).toUpperCase();
+      }
+
+      async function BuyToken() {
+        // Get a Web3 instance for the wallet
+        const web3 = new Web3(provider);
+
+        const chainId = await web3.eth.getChainId();
+
+        const accounts = await web3.eth.getAccounts();
+
+        // console.log("Got accounts", accounts);
+        selectedAccount = accounts[0];
+
+        // Go through all accounts and get their ETH balance
+        const rowResolvers = accounts.map(async (address) => {
+          const balance = await web3.eth.getBalance(address);
+        });
+
+        // until data for all accounts is loaded
+        await Promise.all(rowResolvers);
+
+        console.log("abcd", selectedAccount, chainId, web3);
+      }
+
+      async function resetAccountBid() {
+        await bid(provider);
+      }
+
+      async function bidNow() {
+        console.log("Opening a dialog", web3Modal);
+        try {
+          provider = await web3Modal.connect();
+        } catch (e) {
+          console.log("Could not get a wallet connection", e);
+          return;
+        }
+
+        await resetAccountBid();
+      }
+
+      async function bid() {
+        // Get a Web3 instance for the wallet
+        const web3 = new Web3(provider);
+
+        const chainId = await web3.eth.getChainId();
+
+        const accounts = await web3.eth.getAccounts();
+
+        // console.log("Got accounts", accounts);
+        selectedAccount = accounts[0];
+
+        // Go through all accounts and get their ETH balance
+        const rowResolvers = accounts.map(async (address) => {
+          const balance = await web3.eth.getBalance(address);
+        });
+
+        // until data for all accounts is loaded
+        await Promise.all(rowResolvers);
+
+        console.log("abcd", selectedAccount, chainId, web3);
+        if(chainId != 3){
+          alert("please select ropsten Test Network")
+          return;
+        }
+        const nonce = await web3.eth.getTransactionCount(
+          selectedAccount,
+          "latest"
+        ); //get latest nonce
+        const from_account = web3.utils.toChecksumAddress(selectedAccount);
+        const Admin = web3.utils.toChecksumAddress(
+          "0xF24a24Ab64a29edd50ACC655f4dd78360888A83e"
+        );
+        var amt = document.getElementById("bidding").value;
+
+        if(amt<=0){
+          alert("Please put a Value greater than Zero");
+          return;
+        }
+
+        let estimates_gas = await web3.eth.estimateGas({
+          from: accounts[0],
+          to: Admin,
+        });
+
+        console.log("gas fees", estimates_gas);
+
+        let gasLimit = web3.utils.toHex(estimates_gas * 2);
+        let gasPrice_bal = await web3.eth.getGasPrice();
+        let gasPrice = web3.utils.toHex(gasPrice_bal * 2);
+
+        tx = {
+          from: accounts[0],
+          to: Admin,
+          nonce: nonce,
+          gas: 500000,
+          value: "0x" + (amt * 1000000000000000000 * 0.00023755).toString(16),
+        };
+
+        web3.eth.sendTransaction(tx, function (err, hash) {
+          if (!err) {
+            // Add modal
+
+            const expectedBlockTime = 1000; // 1sec
+
+            const sleep = (milliseconds) => {
+              return new Promise((resolve) =>
+                setTimeout(resolve, milliseconds)
+              );
+            };
+            (async function () {
+              let transactionReceipt = null;
+              while (transactionReceipt == null) {
+                // Waiting expectedBlockTime until the transaction is mined
+                transactionReceipt = await web3.eth.getTransactionReceipt(hash);
+                await sleep(expectedBlockTime);
+              }
+              console.log("trx", transactionReceipt);
+              alert("Transaction Completed")
+              console.log("trx receipt", transactionReceipt.status);
+              if (transactionReceipt.status) {
+              }
+            })();
+          } else {
+            console.log(err);
+          }
+        });
+      }
+    </script>
+   
+  </body>
+</html>

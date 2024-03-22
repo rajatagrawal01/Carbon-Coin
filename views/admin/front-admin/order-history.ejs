@@ -1,0 +1,935 @@
+<%- include('header') -%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style type="text/css">
+  
+  
+  .button {
+  background-color:white;
+  border: 1.5px solid white;
+  color: black;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  float: right;
+  transition-duration: 0.4s;
+  }
+
+.button:hover {
+  background-color: #d4d125; /* Green */
+  color: white;
+}
+
+.button:active {
+
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+td {
+    max-width: 150px !important;
+    overflow: hidden !important
+  }
+
+table, th, td {
+  border: 1px solid white;
+}
+  
+  .vl {
+  border-left: 6px solid white;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+
+  .vl {
+  border-left: 6px solid white ;
+  height: 500px;
+}
+
+  .container {
+    background-color: white;
+    font-size: .12;
+  }
+
+  #example_wrapper .dataTables_filter {
+    display: none !important;
+  }
+</style>
+<div class="heading-row mb-20">
+  <div class="row align-item-center">
+     <div class="col-lg-6">
+        <h3 class="page-title"><span class="page-title-icon bg-gradient-primary text-white mr-2"><i class="mdi mdi-history"></i></span> Order History </h3>
+     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 grid-margin stretch-card">
+
+    <div class="card">
+      <div class="card-header">
+      </div>
+
+
+      <div class="card-body table-responsive">
+        <%if(err_msg !="" ){%>
+          <span style="color: red; ">
+            <%= err_msg%>
+          </span>
+          <%}%>
+            <%if(success_msg !="" ){%>
+              <span style="color: #099441; ">
+                <%=success_msg%>
+              </span>
+              <%}%>
+                <table class="table" id="example">
+                  <thead>
+					<tr>
+                        <th width="3%">S. No.</th>
+                        <th width="10%">Transaction Hash</th>
+                        <th width="10%">User Wallet Address</th>
+                        <th width="10%">Admin Wallet Address</th>
+                        <!-- <th width="10%">Email</th> -->
+                        <!-- <th width="10%">Gas Fee</th> -->
+                        <th width="8%">Value</th>
+                        <th width="7%">COINS</th>
+                        <!-- <th width="7%">Account</th> -->
+						<th width="7%">Status</th>
+						
+
+
+                        <!-- <th width="10%">Payment Method</th> -->
+                      </tr>
+                    
+                  </thead>
+                  <tbody id="data">
+
+                  </tbody>
+                </table>
+                <!-- <body>
+
+                  <input type="button" class="button" value="Next">
+                  <input type="button" class="button" value="Previous">
+                  
+                  
+                  </body> -->
+				 
+				  
+
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- Modal -->
+ <div
+ class="modal fade comming-soon-popup coming-modal-Modal"
+ tabindex="-1"
+ id="demo"
+ role="dialog"
+ aria-labelledby="exampleModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+	 <div class="modal-body">
+	   <button
+		 type="button"
+		 class="close"
+		 data-dismiss="modal"
+		 aria-label="Close"
+	   >
+		 <span aria-hidden="true">&times;</span>
+	   </button>
+	   <div>
+		 <h2>Coming Soon....!!!</h2>
+	   </div>
+	 </div>
+   </div>
+ </div>
+</div>
+
+<script>
+    fetch("https://api-ropsten.etherscan.io/api?module=account&action=txlist&address=0xF24a24Ab64a29edd50ACC655f4dd78360888A83e&startblock=0&endblock=99999999&page=1&offset=infinite&sort=desc&apikey=97WJJ1S3YEQ35JHWB29Q3QMH57YVAXRW4K").then(
+      res => {
+        res.json().then(
+          data => {
+            console.log(data);
+
+            data = data.result;
+            if (data.length > 0) {
+              var temp = "";
+
+
+              data.forEach(async (u, index) => {
+                let i = index + 1;
+                temp += "<tr>";
+                temp += "<td>" + i + "</td>";
+                // temp +="<td>"+u.sr=0 ;for(let i=0;i<=100;i++){sr=i}+"</td>";
+                temp += "<td><a href='https://ropsten.etherscan.io/tx/"+u.hash+"' target=_blank style='font-weight:500'>"+u.hash+ "</a></td>";
+                temp += "<td id='userAcc'>" + u.from + "</td>";
+                temp += "<td>" + u.to + "</td>";
+                // temp += "<td>" + u.gasPrice + "</td>";
+                temp += "<td id='bidValue'>" + u.value / 10 ** 18 + "</td>";
+                temp += "<td>" + "<button class='btn' onClick='BuyEth("+JSON.stringify(u)+")'>Enable Ethereum</button>" + "</td>";               
+				// temp += "<td>" + "Account: <span class='showAccount'></span>" + "</td>";
+				temp += "<td >" + "<a href="+"/status?transaction="+u.hash+" target="+"_blank"+"><button class="+"btn btn-primary"+">View status</button></a>" +"</td>";
+                temp += "</tr>";                                                          
+				    temp += "</tr>";
+			})
+
+              document.getElementById("data").innerHTML = temp;
+            }
+          }
+
+        )
+      }
+    )
+  </script>
+  <script>
+	  function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+  </script>
+
+
+
+  <script src="user_assets/js/jquery.js"></script>
+
+  <script src="user_assets/js/bootstrap.min.js"></script>
+  <script src="user_assets/js/bootstrap-select.min.js"></script>
+  <script src="user_assets/js/jquery.validate.min.js"></script>
+  <script src="user_assets/js/owl.carousel.min.js"></script>
+  <script src="user_assets/js/isotope.js"></script>
+  <script src="user_assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="user_assets/js/waypoints.min.js"></script>
+  <script src="user_assets/js/jquery.counterup.min.js"></script>
+  <script src="user_assets/js/wow.min.js"></script>
+  <script src="user_assets/js/jquery.easing.min.js"></script>
+  <script src="user_assets/js/particles.min.js"></script>
+  <script src="user_assets/js/particles-config.js"></script>
+  <script src="user_assets/js/Chart.min.js"></script>
+  <script src="user_assets/js/chart-config.js"></script>
+  <script src="user_assets/js/custom.js"></script>
+
+  <script>
+
+	async function checkStatus(user){
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "/checkTransaction");
+		xhr.setRequestHeader("Accept", "application/json");
+		xhr.setRequestHeader("Content-Type", "application/json");
+		$.ajax({
+		type: "POST",
+		url: "/CheckTransaction",
+		data: `{
+			"transaction": ${user.hash},
+		}`,
+  		success: function (result) {
+			  console.log(result.status,"hello");
+			  let status=result.status;
+			//   document.getElementById("stat").value=status;
+		  return result;
+		},
+  	dataType: "json"
+	});
+	}
+	console.log(status,"this is status")
+
+</script>
+
+  <script>
+    function decimalToHexString(number) {
+      if (number < 0) {
+        number = 0xFFFFFFFF + number + 1;
+      }
+      return number.toString(16).toUpperCase();
+    }
+  </script>
+  <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+  <script type="text/javascript" src="https://unpkg.com/evm-chains/lib/index.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+  <!-- <script>
+    function connect() {
+      const ethereumButton = document.querySelector('.enableEthereumButton');
+      const showAccount = document.querySelector('.showAccount');
+      const sendEthButton = document.querySelector('.sendEthButton');
+      const userWallet = document.getElementById("userAcc").innerHTML;
+      const biddingValue = (document.getElementById("bidValue").innerHTML);
+
+      console.log(biddingValue, "hello user");
+
+      ethereumButton.addEventListener('click', () => {
+        getAccount();
+      });
+
+      async function getAccount() {
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+        showAccount.innerHTML = account;
+      }
+
+      let accounts = [];
+
+      sendEthButton.addEventListener('click', () => {
+        ethereum
+          .request({
+            method: 'eth_sendTransaction',
+            params: [
+              {
+                from: accounts[0],
+                to: userWallet,
+                // value: decimalToHexString(biddingValue),
+                value: '0x' + ((biddingValue * 1000000000000000000).toString(16)),
+                gasPrice: '',
+                gas: '',
+              },
+            ],
+          })
+          .then((txHash) => console.log(txHash))
+          .catch((error) => console.error);
+      });
+
+      ethereumButton.addEventListener('click', () => {
+        getAccount();
+      });
+
+      async function getAccount() {
+        accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      }
+    }
+  </script> -->
+
+  <script>
+
+    // Unpkg imports
+    const Web3Modal = window.Web3Modal.default;
+    const WalletConnectProvider = window.WalletConnectProvider.default;
+    const EvmChains = window.EvmChains;
+    const Fortmatic = window.Fortmatic;
+    const userWallet = document.getElementById("userAcc").innerHTML;
+
+    // Web3modal instance
+  
+
+    // Chosen wallet provider given by the dialog window
+    let provider;
+
+
+    // Address of the selected account
+    let selectedAccount;
+
+
+    /**
+     * Setup the orchestra
+     */
+
+     window.onload = function(){
+       console.log(init());
+     };
+
+
+	 async function init() {
+      console.log("Initializing example");
+      console.log("WalletConnectProvider is", WalletConnectProvider);
+      // console.log("Fortmatic is", Fortmatic);
+
+      // Tell Web3modal what providers we have available.
+      // Built-in web browser provider (only one can exist as a time)
+      // like MetaMask, Brave or Opera is added automatically by Web3modal
+      const providerOptions = {
+        walletconnect: {
+          package: WalletConnectProvider,
+          options: {
+            rpc: {
+              3: 'http://18.222.179.166:8501',
+            },
+            network: 'ropsten',
+            chainId: 1221,
+            // infuraId: "bnb1a5cae5d9hp0we9cx9v02n9hvmt94nnuguv0fav",
+          },
+        },
+      };
+
+       let web3Modal = await  new Web3Modal({
+        cacheProvider: false, // optional
+        providerOptions, // required
+      });
+
+      return web3Modal;
+
+    }
+
+	async function BuyEth(user) {
+      console.log(user);
+      web3Modal = await init();
+      startBuy(user,web3Modal);
+    }
+
+
+	async function startBuy(user,web3Modal) {
+
+      
+// console.log("Opening a dialog", web3Modal);
+try {
+  let provider = await web3Modal.connect();
+  console.log(provider)
+
+  provider.on("accountsChanged", (accounts) => {
+		window.alert("Account has Changed");
+	});
+  provider.on("chainChanged", (chainId) => {
+	 window.alert("Imperial Blockchain is Only Supported");
+  });
+  
+  await resetAccountDataAll(user,provider); 
+
+} catch (e) {
+  console.log("Could not get a wallet connection", e);
+  return;
+}
+
+// Subscribe to accounts change
+
+
+// Subscribe to chainId change
+
+}
+async function resetAccountDataAll(user,provider) {
+      await BuyToken(user,provider);
+    }
+
+    async function BuyToken(user,provider) {
+      // Get a Web3 instance for the wallet
+      // const web3 = new Web3(provider);
+      let web3 = new Web3(Web3.givenProvider);
+
+      const chainId = await web3.eth.getChainId();
+      const selectedAccount = await ethereum.selectedAddress;
+
+      // console.log("Got accounts", accounts);
+
+      // Go through all accounts and get their ETH balanc
+
+
+    
+
+      // const contract_address = "0x543b11deb5b018a50fbffdf9a12b44fefbb0a676";
+      const contract_address = "0xe57eaE0D21827d599226c2cc06f8257af847Aa41";
+
+
+
+      // const contract_address = '0x1BE28AdF4ee250CBC9c6c80f9cAaC378085a440F';
+	  const abi = [
+			{
+				"inputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "_decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "_name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "_symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "subtractedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "decreaseAllowance",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "addedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseAllowance",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "mint",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		];    
+      
+		const caddress = web3.utils.toChecksumAddress(contract_address);
+      const Admin_Address = "0xe5aBDDb1d34d2F2fb15941966FDeE818Bcc72386";
+      const TokenPrice = "1334";
+      const decimal = "1000000000000000000";
+      const tokenContract = new web3.eth.Contract(abi, caddress);
+    //   const nonce = await web3.eth.getTransactionCount(selectedAccount, 'latest'); //get latest nonce
+    //   const from_account = web3.utils.toChecksumAddress(selectedAccount);
+    //   const Admin = web3.utils.toChecksumAddress(user.from);
+    //   let amount = '0x' + ((TokenPrice * decimal*biddingValue).toString(16))
+    //   tx = {
+    //     'from': from_account,
+    //     'to': caddress,
+    //     'nonce': nonce,
+    //     'data': tokenContract.methods.transfer(Admin, amount).encodeABI()
+    //   };
+		var value=user.value*1000;
+		value=value.toString();
+		tokenContract.methods.transfer(user.from,value).send({
+			from:selectedAccount,
+		}).on("receipt",(result)=>{
+			console.log(result);
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "/saveTransaction");
+		xhr.setRequestHeader("Accept", "application/json");
+		xhr.setRequestHeader("Content-Type", "application/json");
+		$.ajax({
+		type: "POST",
+		url: "/saveTransaction",
+		data: {
+			"transaction": user.hash,
+			"blockHash":result.blockHash,
+			"blockNumber":result.blockNumber,
+			"from":result.from,
+			"to":result.to,
+			"imperiumHash":result.transactionHash,
+		},
+  		success: function (result) {
+			  alert("Transaction Done")
+		 	 return result.status;
+				},
+			dataType: "json"
+			});
+		}).on("error",(err)=>{
+			console.log(err);
+		})
+    }
+
+  </script>

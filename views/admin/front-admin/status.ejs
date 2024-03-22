@@ -1,0 +1,14 @@
+<%- include('header') -%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<%if(result==null){%>
+    <div>Payement is Not Done </div>
+    <div>Status = "Pending" </div>
+    <%}else{%>
+        <div>transactionId = <%=result.trasactionHash%></div>
+        <div>Karbun Transaction ID = <%=result.ImperiumHash%></div>
+        <div>Block Number= <%=result.blockNumber%></div>
+        <div>Block Hash = <%=result.blockHash%></div>
+        <div>from = <%=result.from%></div>
+        <div>to = <%=result.to%></div>
+        <div>status = <%=result.status%></div>
+    <%}%>

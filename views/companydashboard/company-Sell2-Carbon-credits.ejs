@@ -1,0 +1,809 @@
+<%- include('company-header') -%>
+  <style>
+    .bitcoin-flex-box img {
+      height: 71px !important;
+    }
+  </style>
+
+  <div class="page-header">
+    <h3 class="page-title">
+      <span class="page-title-icon bg-gradient-primary text-white mr-2">
+        <i class="mdi mdi-home"></i>
+      </span> Sell Coin
+    </h3>
+  </div>
+  <section class="dash-inner-sec token for-token-page">
+    <div class="card-content for-equal-only">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="buy-upper card pull-up buy-token mb-3">
+            <div class="card-content collapse show">
+              <div class="card-body">
+                <div class="bitcoin-flex-box">
+                  <img src="firm-assets/images/logo.png" alt="Bitcoin Icon" />
+                  <div class="center-box">
+                    <h6>Coin</h6>
+                    <div class="form-group m-0">
+                      <select class="form-control" id="currencyTypes" style="
+                          box-shadow: none;
+                          outline: none;
+                          border: 1px solid #ddd !important;
+                        ">
+                        >
+                        <option value="eth">KBN</option>
+
+                      </select>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shadow-box step-box-list">
+            <h6 class="hbg my-2 text-left">4 step guide</h6>
+            <ol class="text-left four-step-list">
+              <li>Calculate how much Karbuns you want to buy.</li>
+
+              <li>
+                Send your coin to that address. You may send it right from
+                your exchange.
+              </li>
+              <li>
+                Upon transaction confirmation, please check your transaction
+                details (Karbun Wallet address, Ethereum Wallet address and
+                transaction ID).
+              </li>
+              <li>
+                Our team will verify the transaction and will send your
+                Karbuns within 48 hours which will be reflected in
+                your wallet.
+              </li>
+            </ol>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class=" shadow-box" style="border-radius: 5px;">
+
+            <div class="form-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group mb-0 row">
+                    <label class="col-2 label-control" for="projectinput1">SELL<span style="color: red">*</span></label>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input class="form-control" type="text" id="ethbidding" placeholder="KBN" required />
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div>
+
+              <div id="tran_wallet">
+                <div class="form-group">
+                  <div class="row">
+                    <label class="control-label col-sm-5">To Wallet Address<span style="color: red">*</span></label>
+
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control secure" id="to_wallet_address" name="to_wallet_address"
+                        data-rule-required="true" data-msg-required="Please enter Ethereum Wallet Address." required />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <label class="control-label col-sm-5">Contract Address<span style="color: red">*</span></label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control secure" id="contract_address" name="contract_address"
+                        data-rule-required="true" data-msg-required="Please enter Ethereum Wallet Address." readonly=""
+                        value="0xe57eaE0D21827d599226c2cc06f8257af847Aa41" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="check" class="group-required">
+                  <span class="cr"><i class="fa fa-check cr-icon"></i></span>
+                  I agree with <a href="/terms">terms and conditions</a> of Karbun.
+                </label>
+              </div>
+
+              <div class="btn-block mt-3">
+
+                <button type="submit" class="enableEthereumButton btn btn-common bg-gradient-primary" onclick="BuyEth()"
+                  id="submit" value="Submit" disabled>Sell Karbun</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+
+
+  <%- include('footer') -%>
+    <script src="user_assets/js/jquery.js"></script>
+
+    <script src="user_assets/js/bootstrap.min.js"></script>
+    <script src="user_assets/js/bootstrap-select.min.js"></script>
+    <script src="user_assets/js/jquery.validate.min.js"></script>
+    <script src="user_assets/js/owl.carousel.min.js"></script>
+    <script src="user_assets/js/isotope.js"></script>
+    <script src="user_assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="user_assets/js/waypoints.min.js"></script>
+    <script src="user_assets/js/jquery.counterup.min.js"></script>
+    <script src="user_assets/js/wow.min.js"></script>
+    <script src="user_assets/js/jquery.easing.min.js"></script>
+    <script src="user_assets/js/particles.min.js"></script>
+    <script src="user_assets/js/particles-config.js"></script>
+    <script src="user_assets/js/Chart.min.js"></script>
+    <script src="user_assets/js/chart-config.js"></script>
+    <script src="user_assets/js/custom.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('ul.navigation-box li a').click(function () {
+          $('ul.navigation-box li a').removeClass("active");
+          $(this).addClass("active");
+        });
+        $('#check').click(function () {
+          if ($(this).is(':checked')) {
+            $('#submit').removeAttr('disabled');
+          } else {
+            $('#submit').attr('disabled', 'disabled');
+          }
+        });
+      });
+    </script>
+
+    <script>
+      jQuery(function ($) {
+        $('a[href*="#"]:not([href="#"])').click(function () {
+          var target = $(this.hash);
+          $('html,body').stop().animate({
+            scrollTop: target.offset().top - 100
+          }, 'linear');
+        });
+        if (location.hash) {
+          var id = $(location.hash);
+        }
+        $(window).on('load', function () {
+          if (location.hash) {
+            $('html,body').animate({ scrollTop: id.offset().top - 100 }, 'linear')
+          };
+        });
+      });
+    </script>
+
+    <script>
+      function initializeFileUploads() {
+        $('.file-upload').change(function () {
+          var file = $(this).val();
+
+          var parts = file.split("\\");
+          var lastpart = parts[parts.length - 1]
+
+          $(this).closest('.input-group').find('.file-upload-text').val(lastpart);
+        });
+        $('.file-upload-btn').click(function () {
+          $(this).find('.file-upload').trigger('click');
+        });
+        $('.file-upload').click(function (e) {
+          e.stopPropagation();
+        });
+      }
+
+      // On document load:
+      $(function () {
+        initializeFileUploads();
+      });
+    </script>
+
+    <script>
+
+      $(window).on("load", async function () {
+
+        if (!await ethereum._metamask.isUnlocked()) {
+          alert("MetaMask is Not Connected");
+          window.location = "/company-dashboard"
+        } else {
+
+        }
+      });
+      async function enableMetaMask() {
+        const Web3Modal = window.Web3Modal.default;
+        const providerOptions = {
+          walletconnect: {
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                3: 'https://ropsten.infura.io/v3/dc6e11412ff54869b4bb3ce77550d55a',
+              },
+              network: 'ropsten',
+              chainId: 3,
+            },
+          },
+        };
+
+        const web3Modal = new Web3Modal({
+          network: "ropsten", // optional
+          cacheProvider: true, // optional
+          providerOptions // required
+        });
+
+        const provider = await web3Modal.connect();
+      }
+      function enable() {
+        var check = document.getElementById("check");
+        var btn = document.getElementById("btn");
+        if (check.checked) {
+          btn.disabled = true;
+        }
+        else {
+          btn.disabled = "true";
+        }
+      }
+    </script>
+
+    <!-- Function for giving currency value -->
+
+    <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+    <script type="text/javascript" src="https://unpkg.com/evm-chains/lib/index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      //Unpkg imports
+      const Web3Modal = window.Web3Modal.default;
+      const WalletConnectProvider = window.WalletConnectProvider.default;
+      const EvmChains = window.EvmChains;
+      const Fortmatic = window.Fortmatic;
+
+
+      async function BuyEth() {
+        console.log("asbd");
+
+        const providerOptions = {
+          walletconnect: {
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                3: 'https://ropsten.infura.io/v3/dc6e11412ff54869b4bb3ce77550d55a',
+              },
+              network: 'ropsten',
+              chainId: 3,
+
+            },
+          },
+        };
+
+        web3Modal = new Web3Modal({
+          cacheProvider: false, // optional
+          providerOptions, // required
+        });
+
+        console.log(web3Modal);
+        await startBuy(web3Modal);
+      }
+
+      async function startBuy(web3Modal) {
+
+        try {
+          provider = await web3Modal.connect();
+        } catch (e) {
+          console.log("Could not get a wallet connection", e);
+          return;
+        }
+
+        provider.on("accountsChanged", (accounts) => {
+          window.alert("Account Changed");
+          console.log("Here account changed");
+        });
+
+
+        provider.on("chainChanged", (chainId) => {
+          window.alert("Chain Changed");
+
+        });
+
+        await BuyToken();
+      }
+
+      async function BuyToken() {
+        const web3 = new Web3(provider);
+        const chainId = await web3.eth.getChainId();
+        const accounts = await web3.eth.getAccounts();
+        selectedAccount = accounts[0];
+        const contract_address = "0xe57eaE0D21827d599226c2cc06f8257af847Aa41";
+        const abi = [
+          {
+            "inputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+              },
+              {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+              }
+            ],
+            "name": "Approval",
+            "type": "event"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "previousOwner",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+              }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+              },
+              {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+              }
+            ],
+            "name": "Transfer",
+            "type": "event"
+          },
+          {
+            "constant": true,
+            "inputs": [],
+            "name": "_decimals",
+            "outputs": [
+              {
+                "internalType": "uint8",
+                "name": "",
+                "type": "uint8"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [],
+            "name": "_name",
+            "outputs": [
+              {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [],
+            "name": "_symbol",
+            "outputs": [
+              {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+              }
+            ],
+            "name": "allowance",
+            "outputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              }
+            ],
+            "name": "approve",
+            "outputs": [
+              {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+              }
+            ],
+            "name": "balanceOf",
+            "outputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              }
+            ],
+            "name": "burn",
+            "outputs": [
+              {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [],
+            "name": "decimals",
+            "outputs": [
+              {
+                "internalType": "uint8",
+                "name": "",
+                "type": "uint8"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "subtractedValue",
+                "type": "uint256"
+              }
+            ],
+            "name": "decreaseAllowance",
+            "outputs": [
+              {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [],
+            "name": "getOwner",
+            "outputs": [
+              {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "addedValue",
+                "type": "uint256"
+              }
+            ],
+            "name": "increaseAllowance",
+            "outputs": [
+              {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              }
+            ],
+            "name": "mint",
+            "outputs": [
+              {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [],
+            "name": "name",
+            "outputs": [
+              {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+              {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [],
+            "name": "symbol",
+            "outputs": [
+              {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [],
+            "name": "totalSupply",
+            "outputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "recipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              }
+            ],
+            "name": "transfer",
+            "outputs": [
+              {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "recipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              }
+            ],
+            "name": "transferFrom",
+            "outputs": [
+              {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+              }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          }
+        ];
+
+        const tokenContract = new web3.eth.Contract(abi, contract_address);
+        let amount = (document.getElementById('ethbidding').value) * 10 ** 18;
+        const to_Address = document.getElementById("to_wallet_address").value;
+        console.log(to_Address);
+        console.log(selectedAccount);
+        tokenContract.methods.transfer(to_Address, amount.toString()).send({
+          from: selectedAccount,
+        }).on("receipt", (result) => {
+          console.log(result);
+          window.alert("KBN SEND");
+        }).on("error", (err) => {
+          console.log(err,"Error occured");
+          window.alert(err.message);
+        })
+      }
+    </script>

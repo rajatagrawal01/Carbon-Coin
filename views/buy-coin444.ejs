@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Karbun Coin ICO</title>
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="16x16" href="user_assets/img/favicon.png" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="stylesheet" href="user_assets/css/style.css" />
+  <link rel="stylesheet" href="user_assets/css/responsive.css" />
+
+  <style>
+    .buy-coin-sec .coin-select-box {
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .buy-coin-sec .coin-select-box .img-coin {
+      height: 55px;
+      margin-right: 30px;
+    }
+
+    .buy-coin-sec .select-coin-box {
+      width: 80%;
+    }
+
+    .buy-coin-sec .select-coin-box .btn-group.bootstrap-select {
+      margin: 0 !important;
+    }
+
+    .buy-coin-sec .shadow-box {
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .buy-coin-sec .step-box-list h6 {
+      font-size: 20px;
+    }
+    .buy-coin-sec .step-box-list {
+      font-size: 14px;
+    }
+
+    .buy-coin-sec .step-box-list ol {
+      padding-left: 15px;
+    }
+
+    .buy-coin-sec .align-items-center {
+      align-items: center;
+    }
+
+    .buy-coin-sec .input-group.file-input {
+      display: flex;
+      align-items: center;
+    }
+
+    .buy-coin-sec .input-group.file-input .file-upload-btn {
+      position: relative;
+      height: auto;
+      border-radius: 0;
+      background-color: #7bbe3f;
+      color: black;
+      padding: 10px 30px;
+    }
+    .buy-coin-sec .input-group.file-input .file-upload-btn .file-upload {
+      position: absolute !important;
+      padding: 0;
+      margin: 0;
+      width: 100% !important;
+      height: 100% !important;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+    .buy-coin-sec form.contact-form .bootstrap-select>.dropdown-toggle {
+      padding: 10px 20px !important;
+    }
+
+    .buy-coin-sec form.contact-form input,
+    form.contact-form textarea {
+      height: auto !important;
+      padding: 10px 20px !important;
+      line-height: 20px;
+      margin-bottom: 15px;
+    }
+
+    .buy-coin-sec .form-control.file-upload-text {
+      border: none;
+      outline: none;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+
+    .buy-coin-sec .checkbox input[type="checkbox"],
+    .buy-coin-sec .checkbox-inline input[type="checkbox"] {
+      position: absolute;
+      margin-top: 4px\9;
+      width: 25px;
+      height: 25px !important;
+      margin: 0;
+      top: 2px;
+      left: 0;
+    }
+
+    .buy-coin-sec .btn-block {
+      margin-top: 45px;
+    }
+
+    .buy-coin-sec {
+      padding: 40px 0 !important;
+    }
+
+    .buy-coin-sec .checkbox {
+      margin: 30px 0 10px;
+    }
+
+    .buy-coin-sec .checkbox a {
+      color: #7bbe3f;
+    }
+
+    @media (max-width: 1300px) {
+      .buy-coin-sec .thm-container {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body class="active-preloader-ovh">
+  <div class="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <header class="header header-home-one">
+    <nav class="navbar navbar-default header-navigation stricky">
+      <div class="thm-container clearfix">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed bitmex-icon-menu" data-toggle="collapse"
+            data-target=".main-navigation" aria-expanded="false"></button>
+          <a class="navbar-brand" href="/">
+            <img src="user_assets/img/logo.png" style="height: 85px" />
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse main-navigation mainmenu" id="main-nav-bar">
+          <ul class="nav navbar-nav navigation-box navbar-right">
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#news">News</a></li>
+            <li><a href="/#Calculator">Calculator</a></li>
+            <li><a href="/#how-it-works">How It Works</a></li>
+            <li><a href="/#our-experts">Our Experts</a></li>
+            <li><a href="/#contact-us">Contact Us</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+  </header>
+  <!-- /.header -->
+
+  <section class="contact-page-wrapper sec-pad buy-coin-sec">
+    <div class="thm-container">
+      <form class="contact-form row">
+        <div class="row contact-form">
+          <div class="col-md-6">
+            <div class="coin-select-box mb-3">
+              <div>
+                <img src="user_assets/img/eth-icon.png" class="img-coin" alt="Bitcoin Icon" />
+              </div>
+              <div class="select-coin-box">
+                <label>Karbun Coin</label>
+                <select class="" id="currencyTypes"
+                  style="box-shadow: none;outline: none;border: 1px solid #ddd !important;background-color: transparent !important;"
+                  onchange="myChangeFunction(bidding),changeCurrency(this.value)" onchange="myChangeFunction()">
+                  <!-- onchange="changeCurrency(this.value) change to myChangeFunction(bidding); -->
+
+                  <!-- <option value="eth" id="bidding" onchange="myChangeFunction(bidding)"
+                        placeholder="TABOO">
+                        <option value="bnb" id="bidding" onchange="myChangeFunction(bidding)"
+                        placeholder="TABOO">
+                        <option value="usd" id="bidding" onchange="myChangeFunction(bidding)"
+                        placeholder="TABOO"> -->
+
+                  <option value="eth">eth</option>
+                  <option value="bnb">bnb</option>
+                  <option value="usd">usdt</option>
+              </div>
+            </div>
+          </div>
+          <div class="shadow-box step-box-list">
+            <h6 class="hbg my-2 text-left">5 step guide</h6>
+            <ol class="text-left four-step-list">
+              <li>Calculate how much Karbuns you want to buy.</li>
+              <li>Copy/Scan the displayed address</li>
+              <li>
+                Send your ETH to that address. You may send it right from
+                your exchange.
+              </li>
+              <li>
+                Upon transaction confirmation, please check your transaction
+                details (Karbun Wallet address, Ethereum Wallet address and
+                transaction ID).
+              </li>
+              <li>
+                Our team will verify the transaction and will send your
+                Karbun Karbuns within 48 hours which will be reflected in
+                your wallet.
+              </li>
+            </ol>
+          </div>
+          
+        </div>
+        <div class="col-md-6">
+          <div class="shadow-box">
+            <label>Buy*</label>
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <input type="text" id="bidding" onchange="myChangeFunction(bidding)" placeholder="USD" />
+              </div>
+              <div class="col-md-2 text-center">
+                =
+            </div>
+            <div class="col-md-1">
+                <input type="text" id="decimal" placeholder="=" readonly>
+            </div>
+            <div class="col-md-5">
+                <input type="text" id="ethbidding" placeholder="eth" readonly>
+        </div>
+              </div>
+            </div>
+            <div>
+              <!-- <h4><b>1 USD = 23 TRX</b></h4> -->
+              <div class="row">
+                  <div class="col-md-12">
+                      <div>
+                          <label>Client Wallet Address*</label>
+                          <input type="text" class="form-control secure" id="eth_wallet_address"
+                              name="eth_wallet_address" data-rule-required="true"
+                              data-msg-required="Please enter Ethereum Wallet Address." readonly="">
+                      </div>
+                  </div>
+                  <!-- <div class="col-md-6">
+                      <div>
+                          <label>Reference/Transaction ID</label>
+                          <input type="text" placeholder="">
+                      </div>
+                  </div> -->
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12">
+                      <div>
+                          <label>Contract Address*</label>
+                          <input type="text" class="form-control secure" id="contract_address"
+                              name="contract_address" data-rule-required="true"
+                              data-msg-required="Please enter Ethereum Wallet Address." readonly="">
+                      </div>
+                  </div>
+                  <!-- <div class="col-md-6">
+                      <div>
+                          <label>Reference/Transaction ID</label>
+                          <input type="text" placeholder="">
+                      </div>
+                  </div> -->
+              </div>
+
+              <!-- <div>
+                  <label>Upload Screenshot</label>
+                  <div class="input-group file-input">
+                      <input type="text" class="form-control file-upload-text" disabled=""
+                          placeholder="select a file...">
+                      <button type="button"
+                          class="btn btn-common light-green file-upload-btn upload-btn p-0">
+                          Upload
+                          <input type="file" class="file-upload" data-rule-required="true"
+                              data-msg-required="Please upload Payment Screenshot"
+                              name="transactionImage" id="file-input-1" style="width: 0;"
+                              placeholder="No File Selected">
+                          <span class="input-group-btn">
+                          </span></button>
+
+                  </div>
+              </div> -->
+              <div class="checkbox">
+                  <label>
+                      <input type="checkbox" value="">
+
+                      I agree with <a href="">terms and conditions</a> of Carbon.
+                  </label>
+              </div>
+              <div class="btn-block">
+               <!--  <button type="submit" class="thm-btn yellow-bg-hvr">Submit</button> 
+                <button class="enableEthereumButton btn">Enable Ethereum</button> 
+                 <button class="enableEthereumButton sendEthButton btn thm-btn yellow-bg-hvr">Send
+                    Eth</button> -->
+                 <button class="btn thm-btn yellow-bg-hvr" onclick="BuyEth()">Buy Eth</button>
+                </div>
+          </div>
+          </div>
+        </div>
+    </div>
+    </form>
+    </div>
+  </section>
+  <div class="footer-top page-section" id="contact-us">
+    <div class="thm-container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+          <div class="single-footer-top">
+            <p>
+              <i class="bitmex-icon-envelope"></i><span class="primary">Email: </span>sales@karbun.io ,
+              support@karbun.io
+            </p>
+          </div>
+          <!-- /.single-footer-top -->
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+          <div class="single-footer-top">
+            <p>
+              <i class="bitmex-icon-phone-call"></i><span>Call: </span>+61415898818
+            </p>
+          </div>
+          <!-- /.single-footer-top -->
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <div class="single-footer-top">
+            <p>
+              <i class="bitmex-icon-placeholder"></i><span>Web: </span>www.karbun.io
+            </p>
+          </div>
+          <!-- /.single-footer-top -->
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.thm-container -->
+  </div>
+  <!-- /.footer-top -->
+
+  <footer class="site-footer">
+    <div class="thm-container">
+      <div class="row masonary-layout">
+        <div class="col-md-8 col-sm-8 col-xs-12 col-md-offset-2 col-sm-offset-2">
+          <div class="single-footer-widget text-center">
+            <div class="title">
+              <h3>Subscribe</h3>
+            </div>
+            <!-- /.title -->
+            <form action="inc/mailchimp/subscribe.php" class="subscribe-form">
+              <input type="text" placeholder="Email Address" />
+              <button type="submit" class="fa fa-telegram" style="font-size: 20px"></button>
+            </form>
+            <!-- /.subscribe-form -->
+            <ul class="links-list">
+              <li class="current"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#Calculator">Calculator</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#our-experts">Our Experts</a></li>
+              <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+          </div>
+          <!-- /.single-footer-widget -->
+        </div>
+        <!-- /.col-md-3 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.thm-container -->
+  </footer>
+  <!-- /.site-footer -->
+
+  <div class="footer-bottom">
+    <div class="thm-container clearfix">
+      <div class="pull-left copy-text">
+        <p>&copy; 2021 Carboncoin.com All copy rights are reserved.</p>
+      </div>
+      <!-- /.pull-left copy-text -->
+      <div class="social pull-right">
+        <a href="#" class="fa fa-twitter"></a>
+        <!--
+                --><a href="#" class="fa fa-facebook"></a>
+        <!--
+                --><a href="#" class="fa fa-youtube-play"></a>
+        <!--
+                --><a href="#" class="fa fa-pinterest"></a>
+      </div>
+      <!-- /.social -->
+    </div>
+    <!-- /.thm-container -->
+  </div>
+  <!-- /.footer-bottom -->
+
+  <section class="hidden-sidebar side-navigation">
+    <a href="#" class="close-button side-navigation-close-btn fa fa-times"></a><!-- /.close-button -->
+    <div class="sidebar-content">
+      <div class="social">
+        <a href="#" class="fa fa-twitter"></a>
+        <!--
+                --><a href="#" class="fa fa-facebook"></a>
+        <!--
+                --><a href="#" class="fa fa-youtube-play"></a>
+        <!--
+                --><a href="#" class="fa fa-pinterest"></a>
+      </div>
+      <!-- /.social -->
+    </div>
+    <!-- /.sidebar-content -->
+  </section>
+  <!-- /.hidden-sidebar -->
+
+  <div class="scroll-to-top scroll-to-target" data-target="html">
+    <i class="fa fa-angle-up"></i>
+  </div>
+
+  <div class="scroll-to-top scroll-to-target" data-target="html"><i class="fa fa-angle-up"></i></div>
+
+  <script src="user_assets/js/jquery.js"></script>
+
+  <script src="user_assets/js/bootstrap.min.js"></script>
+  <script src="user_assets/js/bootstrap-select.min.js"></script>
+  <script src="user_assets/js/jquery.validate.min.js"></script>
+  <script src="user_assets/js/owl.carousel.min.js"></script>
+  <script src="user_assets/js/isotope.js"></script>
+  <script src="user_assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="user_assets/js/waypoints.min.js"></script>
+  <script src="user_assets/js/jquery.counterup.min.js"></script>
+  <script src="user_assets/js/wow.min.js"></script>
+  <script src="user_assets/js/jquery.easing.min.js"></script>
+  <script src="user_assets/js/particles.min.js"></script>
+  <script src="user_assets/js/particles-config.js"></script>
+  <script src="user_assets/js/Chart.min.js"></script>
+  <script src="user_assets/js/chart-config.js"></script>
+  <script src="user_assets/js/custom.js"></script>
+
+  <script>
+      $(document).ready(function () {
+          $('ul.navigation-box li a').click(function () {
+              $('ul.navigation-box li a').removeClass("active");
+              $(this).addClass("active");
+          });
+      });
+  </script>
+
+  <script>
+      function initializeFileUploads() {
+          $('.file-upload').change(function () {
+              var file = $(this).val();
+
+              var parts = file.split("\\");
+              var lastpart = parts[parts.length - 1]
+              //alert("file"+lastpart);
+              $(this).closest('.input-group').find('.file-upload-text').val(lastpart);
+          });
+          $('.file-upload-btn').click(function () {
+              $(this).find('.file-upload').trigger('click');
+          });
+          $('.file-upload').click(function (e) {
+              e.stopPropagation();
+          });
+      }
+
+
+
+      // On document load:
+      $(function () {
+          initializeFileUploads();
+      });
+  </script>
+
+  <!-- Function for giving currency value -->
+  <script>
+      function myChangeFunction(bidding) {
+          let currency = document.getElementById("currencyTypes").value;
+
+          if (currency == 'cardano' || currency == 'solana' || currency == 'dogecoin') {
+              axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=taboo-token&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true%27`)
+                  .then(response => {
+                      const price = response.data['taboo-token'].usd
+
+                      axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${currency}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true%27`)
+                          .then(response => {
+                              var ethbiddings = document.getElementById('ethbidding');
+                              const eth = bidding.value / ((response.data[`${currency}`].usd / price))
+                              ethbiddings.value = oneTaboo;
+                          })
+                  })
+
+          } else {
+              axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=taboo-token&vs_currencies=${currency}&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true%27`)
+                  .then(response => {
+                      // console.log(response.data['taboo-token'])
+
+                      var ethbiddings = document.getElementById('ethbidding');
+                      const price = response.data['taboo-token'][`${currency}`];
+                      ethbiddings.value = bidding.value * price;
+                      // console.log(response.data['taboo-token'][`${currency}`])
+                  })
+          }
+      }
+  </script>
+
+  <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+  <script type="text/javascript" src="https://unpkg.com/evm-chains/lib/index.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+  <script>
+      function decimalToHexString(number) {
+          if (number < 0) {
+              number = 0xFFFFFFFF + number + 1;
+          }
+          return number.toString(16).toUpperCase();
+      }
+
+      const ethereumButton = document.querySelector('.enableEthereumButton');
+      const sendEthButton = document.querySelector('.sendEthButton');
+
+      let accounts = [];
+
+      //Sending Ethereum to an address
+      sendEthButton.addEventListener('click', () => {
+          getAccount();
+
+          async function getAccount() {
+              accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+          }
+          var bid = document.getElementById("bidding").value;
+          console.log(bid);
+          ethereum
+              .request({
+                  method: 'eth_sendTransaction',
+                  params: [
+                      {
+                          from: accounts[0],
+                          to: '0xF24a24Ab64a29edd50ACC655f4dd78360888A83e',
+                          value: decimalToHexString(bid * 10 ** 18),
+                          gasPrice: '0x09184e72a000',
+                          gas: '0x21000',
+                      },
+                  ],
+              })
+              .then((txHash) => console.log(txHash))
+              .catch((error) => console.error);
+      });
+
+
+  </script>
+
+  <script>
+      let currencyTypeGlobal;
+      window.onload = function () {
+          changeCurrency("eth");
+      };
+      function changeCurrency(currencyType) {
+          // alert(currencyType);
+          currencyTypeGlobal = currencyType
+          if (currencyType == "eth") {
+              let wallet_address = "0xF24a24Ab64a29edd50ACC655f4dd78360888A83e";
+              document.getElementById("eth_wallet_address").value = wallet_address;
+             let contract_address = "0x00000000219ab540356cbb839cbe05303d7705fa";
+              document.getElementById("contract_address").value = contract_address;
+              let token = "ETH";
+              document.getElementById("ethbidding").placeholder = token;
+              let decimal = 1000000000000000000;
+              document.getElementById("decimal").value = decimal;
+          }
+          else if (currencyType == "bnb") {
+              let wallet_address = "0xF24a24Ab64a29edd50ACC655f4dd78360888A83e";
+              document.getElementById("eth_wallet_address").value = wallet_address;
+              let contract_address = "0xB8c77482e45F1F44dE1745F52C74426C631bDD52";
+              document.getElementById("contract_address").value = contract_address;
+              let token = "BNB";
+              document.getElementById("ethbidding").placeholder = token;
+              let decimal = 1000000000000000000;
+              document.getElementById("decimal").value = decimal;
+          }
+          else if (currencyType == "usdt") {
+              let wallet_address = "0xF24a24Ab64a29edd50ACC655f4dd78360888A83e";
+              document.getElementById("eth_wallet_address").value = wallet_address;
+              let contract_address = "0x03f7cef050aac29954a97334c00920aa8919dc37";
+              document.getElementById("contract_address").value = contract_address;
+              let token = "USDT";
+              document.getElementById("ethbidding").placeholder = token;
+              let decimal = 1000000;
+              document.getElementById("decimal").value = decimal;
+          }
+          else {
+              let wallet_address = "0xF24a24Ab64a29edd50ACC655f4dd78360888A83e";
+              document.getElementById("eth_wallet_address").value = wallet_address;
+              let contract_address = "0xdac17f958d2ee523a2206206994597c13d831ec7";
+              document.getElementById("contract_address").value = contract_address;
+              let token = "ETH";
+              document.getElementById("ethbidding").placeholder = token;
+              let decimal = 1000000000000000000;
+              document.getElementById("decimal").value = decimal;
+          }
+
+      }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+      
+      
+
+  <script>
+
+      // Unpkg imports
+      const Web3Modal = window.Web3Modal.default;
+      const WalletConnectProvider = window.WalletConnectProvider.default;
+      const EvmChains = window.EvmChains;
+      const Fortmatic = window.Fortmatic;
+
+      // Web3modal instance
+      let web3Modal
+
+      // Chosen wallet provider given by the dialog window
+      let provider;
+
+
+      // Address of the selected account
+      let selectedAccount;
+
+
+      /**
+       * Setup the orchestra
+       */
+      function init() {
+
+          console.log("Initializing example");
+          console.log("WalletConnectProvider is", WalletConnectProvider);
+          // console.log("Fortmatic is", Fortmatic);
+
+          // Tell Web3modal what providers we have available.
+          // Built-in web browser provider (only one can exist as a time)
+          // like MetaMask, Brave or Opera is added automatically by Web3modal
+          const providerOptions = {
+              walletconnect: {
+                  package: WalletConnectProvider,
+                  options: {
+                      rpc: {
+                          3: 'https://ropsten.infura.io/v3/dc6e11412ff54869b4bb3ce77550d55a',
+                      },
+                      network: 'ropsten',
+                      chainId: 3,
+                      // infuraId: "bnb1a5cae5d9hp0we9cx9v02n9hvmt94nnuguv0fav",
+                  },
+              },
+          };
+
+          web3Modal = new Web3Modal({
+              cacheProvider: false, // optional
+              providerOptions, // required
+          });
+
+      }
+
+      function BuyEth() {
+          startBuy()
+      }
+      async function startBuy() {
+
+          // console.log("Opening a dialog", web3Modal);
+          try {
+              provider = await web3Modal.connect();
+          } catch (e) {
+              console.log("Could not get a wallet connection", e);
+              return;
+          }
+
+          // Subscribe to accounts change
+          provider.on("accountsChanged", (accounts) => {
+              BuyToken();
+          });
+
+          // Subscribe to chainId change
+          provider.on("chainChanged", (chainId) => {
+              //BuyContent();
+              BuyToken();
+          });
+
+          await resetAccountDataAll();
+      }
+      init()
+
+      async function resetAccountDataAll() {
+          await BuyToken(provider);
+      }
+
+      async function BuyToken() {
+          // Get a Web3 instance for the wallet
+          const web3 = new Web3(provider);
+
+          const chainId = await web3.eth.getChainId();
+
+          const accounts = await web3.eth.getAccounts();
+
+          // console.log("Got accounts", accounts);
+          selectedAccount = accounts[0];
+
+          // Go through all accounts and get their ETH balance
+          const rowResolvers = accounts.map(async (address) => {
+              const balance = await web3.eth.getBalance(address);
+          });
+
+
+          // until data for all accounts is loaded
+          await Promise.all(rowResolvers);
+
+          const contract_address = document.getElementById("contract_address").value;
+
+          // const contract_address = '0x1BE28AdF4ee250CBC9c6c80f9cAaC378085a440F';
+
+          const abi = [{ "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "spender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "delegator", "type": "address" }, { "indexed": true, "internalType": "address", "name": "fromDelegate", "type": "address" }, { "indexed": true, "internalType": "address", "name": "toDelegate", "type": "address" }], "name": "DelegateChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "delegate", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "previousBalance", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "newBalance", "type": "uint256" }], "name": "DelegateVotesChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "previousOwner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "newOwner", "type": "address" }], "name": "OwnershipTransferred", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "inputs": [], "name": "DELEGATION_TYPEHASH", "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "DOMAIN_TYPEHASH", "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "spender", "type": "address" }], "name": "allowance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "approve", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }], "name": "balanceOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }, { "internalType": "uint32", "name": "", "type": "uint32" }], "name": "checkpoints", "outputs": [{ "internalType": "uint32", "name": "fromBlock", "type": "uint32" }, { "internalType": "uint256", "name": "votes", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "subtractedValue", "type": "uint256" }], "name": "decreaseAllowance", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "delegatee", "type": "address" }], "name": "delegate", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "delegatee", "type": "address" }, { "internalType": "uint256", "name": "nonce", "type": "uint256" }, { "internalType": "uint256", "name": "expiry", "type": "uint256" }, { "internalType": "uint8", "name": "v", "type": "uint8" }, { "internalType": "bytes32", "name": "r", "type": "bytes32" }, { "internalType": "bytes32", "name": "s", "type": "bytes32" }], "name": "delegateBySig", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "delegator", "type": "address" }], "name": "delegates", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }], "name": "getCurrentVotes", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }, { "internalType": "uint256", "name": "blockNumber", "type": "uint256" }], "name": "getPriorVotes", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "addedValue", "type": "uint256" }], "name": "increaseAllowance", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_to", "type": "address" }, { "internalType": "uint256", "name": "_amount", "type": "uint256" }], "name": "mint", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "name", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "nonces", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "numCheckpoints", "outputs": [{ "internalType": "uint32", "name": "", "type": "uint32" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "owner", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "renounceOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "symbol", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "totalSupply", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "recipient", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "transfer", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "sender", "type": "address" }, { "internalType": "address", "name": "recipient", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }], "name": "transferOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function" }];
+
+          const caddress = web3.utils.toChecksumAddress(contract_address);
+          const Admin_Address = document.getElementById("eth_wallet_address").value;
+          const TokenPrice = document.getElementById('ethbidding').value;
+          const decimal = document.getElementById('decimal').value;
+          const tokenContract = new web3.eth.Contract(abi, caddress);
+          const nonce = await web3.eth.getTransactionCount(selectedAccount, 'latest'); //get latest nonce
+          const from_account = web3.utils.toChecksumAddress(selectedAccount);
+          const Admin = web3.utils.toChecksumAddress('0x711105948F2673b6BcF2D7C7a774e032745f5Fb3');
+          let amount = '0x' + ((TokenPrice * decimal).toString(16))
+          tx = {
+              'from': from_account,
+              'to': caddress,
+              'nonce': nonce,
+              'gas': 5000000,
+              'maxPriorityFeePerGas': 1999999987,
+              'data': tokenContract.methods.transfer(Admin, amount).encodeABI()
+          };
+
+          web3.eth.sendTransaction(tx, function (err, hash) {
+              if (!err) {
+                  console.log(hash);
+
+                  $.ajax({
+                      dataType: "json",
+                      type: 'post',
+                      url: '/users/save-order',
+                      data: {
+                          tx_id: hash,
+                          address: selectedAccount,
+                          // qty: document.getElementById("copies").value,
+                          amount: TokenPrice,
+                          fees: fees,
+                          //         currency: currency,
+                          //         currencyRate: currencyRate
+                      },
+                      success: function (data) {
+
+                          console.log(data);
+
+                          window.location.href = "/transfer-nft?hash=" + hash;
+
+
+                          //location.reload();
+                      }
+                  });
+
+              }
+              else {
+                  console.log(err);
+              }
+          });
+
+
+      }
+
+</script>

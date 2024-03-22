@@ -1,0 +1,107 @@
+<%- include('company-header') -%>
+
+   <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+          <i class="mdi mdi-account-edit"></i>
+        </span> My Profile </h3>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+           <div class="card-body">
+             <div class="row">
+               <div class="col-md-12 m-auto">
+                 <div>
+                  <form method="POST" action="/updateCompany" id="updateCompany">
+                   <div class="profile-form">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" name="name"  class="form-control" placeholder="" value=<%=user.company_name%>>
+                          </div>
+                        </div>
+                         <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Company's License</label>
+                            <input type="text" name="licence" class="form-control" placeholder="" value=<%=user.companys_licence%>>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Cost per Thousand Trees</label>
+                            <input type="number" name="quotation" class="form-control" placeholder="" value=<%=user.quotation%>>
+                          </div>
+                        </div>
+                      </div>
+
+
+                       <div class="row">
+                        <div class="col-md-6">
+                         <div class="form-group">
+                            <label>Available Area to Land Grow Trees (sqKm)</label>
+                            <input type="number" name="totalArea" class="form-control" placeholder="" value=<%=user.totalArea%>>
+                          </div>
+                        </div>
+                         <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Tree Plantation Capacity</label>
+                              <input type="number" class="form-control" name="approxCapacity" placeholder="" value=<%=user.ApproxCapacity%>>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Email Id</label>
+                            <input type="email" class="form-control" name="email" placeholder="" readonly value=<%=user.email%>  >
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="form-group">
+                            <label>Phone No.</label>
+                            <input type="number" class="form-control" name="mobile" placeholder="" value=<%=user.mobile%>>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="popup-btn text-center">
+                        <input type="submit" class="btn btn-common bg-gradient-primary">
+                        <a href="" class="btn btn-common bg-gradient-primary">Cancel</a>
+                      </div>
+                   </div>
+                  </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <%- include('footer') -%>
+
+    <script src="user_assets/js/jquery.js"></script>
+
+  <script src="user_assets/js/bootstrap.min.js"></script>
+  <script src="user_assets/js/bootstrap-select.min.js"></script>
+  <script src="user_assets/js/jquery.validate.min.js"></script>
+  <script src="user_assets/js/owl.carousel.min.js"></script>
+  <script src="user_assets/js/isotope.js"></script>
+  <script src="user_assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="user_assets/js/waypoints.min.js"></script>
+  <script src="user_assets/js/jquery.counterup.min.js"></script>
+  <script src="user_assets/js/wow.min.js"></script>
+  <script src="user_assets/js/jquery.easing.min.js"></script>
+  <script src="user_assets/js/particles.min.js"></script>
+  <script src="user_assets/js/particles-config.js"></script>
+  <script src="user_assets/js/Chart.min.js"></script>
+  <script src="user_assets/js/chart-config.js"></script>
+  <script src="user_assets/js/custom.js"></script>
+    <script>
+      $("#updateCompany").on("submit", function() {
+        window.alert("Profile Updated")
+      });
+    </script>

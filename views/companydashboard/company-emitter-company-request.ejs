@@ -1,0 +1,97 @@
+<%- include('company-header') -%>
+
+
+
+<script>
+   function updateStatus(u,status){
+     console.log(u+status);
+     console.log("/changeOrderStatus?id="+u._id+"&status="+status);
+    fetch("/changeOrderStatus?id="+u._id+"&status="+status).then(result=>{
+       result.json().then(res=>{
+         console.log(res);
+         if(!res.error){
+         window.alert("Status Updated");
+         }else{
+          window.alert("Some Issue Occured At Server Side");
+         }
+         location.reload();
+       })
+    })
+  }
+  fetch("/getMyOrders").then(result=>{
+    result.json().then(res=>{
+      data = res.res;
+      let temp = "" ;
+      data.forEach((u,index)=>{
+        let i = index + 1;
+                temp += "<tr>";
+                temp += "<td>" + i + "</td>";
+                temp += "<td><a>"+u.emitter_name+ "</a></td>";
+                temp += "<td><a>"+u.approxCapacity+ "</a></td>";  
+                temp += "<td><a>"+u.totalArea+ "</a></td>"; 
+                temp += "<td><a>"+u.quotation+ "</a></td>";
+                temp += "<td><a>"+new Date(u.date)+ "</a></td>";
+                
+                temp += "<td><button onClick=updateStatus("+JSON.stringify(u)+",'ACCEPTED')> ACCEPT </button>"
+                temp += "<button onClick=updateStatus("+JSON.stringify(u)+",'REJECTED')> REJECT </button></td>"
+                temp+"</tr>"
+
+      })
+      document.getElementById("data").innerHTML = temp; 
+    })
+  })
+</script>
+
+  <div class="heading-row mb-20">
+    <div class="row align-item-center">
+       <div class="col-lg-6">
+          <h3 class="page-title"><span class="page-title-icon bg-gradient-primary text-white mr-2"><i class="mdi mdi-tree"></i></span>Emitter Company Request </h3>
+       </div>
+         
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th width="20%">S. No.</th>
+                <th width="20%">Emitter Company Name</th>
+                <th width="20%">Approx Capacity</th>
+                <th width="20%">total Area</th>
+                <th width="20%">Quotation</th>
+                <th width="20%">Date</th>
+                <th width="20%">Action</th>
+              </tr>
+            </thead>
+            <tbody id="data">
+               
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('footer') -%>
+
+  <!-- <script>
+$(document).ready( function () {
+  $('.table').DataTable();
+} );
+</script> -->
+
+<script>
+  $(document).ready( function () {
+    $('.table').DataTable(
+      {
+      "bPaginate": false,
+      "bLengthChange": false,
+      "bFilter": false,
+      "bInfo": false,
+      "bAutoWidth": false }
+    );
+  } );
+  </script>

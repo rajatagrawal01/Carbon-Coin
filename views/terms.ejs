@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Karbun Coin</title>
+        <!-- mobile responsive meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="user_assets/img/favicon.png"/>
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="stylesheet" href="user_assets/css/style.css" />
+        <link rel="stylesheet" href="user_assets/css/responsive.css" />
+    
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+          rel="stylesheet"/>
+        
+          <style>
+            #google_translate_element {
+        color: #fcbf10;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+            .light-dark-bg {
+                background: #388855;
+            }
+            .terms-page-content {
+                color: #ddd;
+                font-size: 16px;
+                text-align: justify;
+            }
+            
+            .terms-page-content p {
+                margin-bottom: 20px;
+            }
+            </style>
+    
+      </head>
+
+      <script>
+        window.onload = function(){
+          fetch('get-terms-n-conditions')
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById("title").innerHTML = JSON.parse(data.sucess).title;
+            document.getElementById("terms_conditions").innerHTML = JSON.parse(data.sucess).content ;
+          });
+        }
+      </script>
+
+
+<body class="active-preloader-ovh" style="top: 0 !important">
+    <div class="preloader">
+      <div class="spinner"></div>
+    </div>
+
+    <header class="header header-home-one">
+      <nav class="navbar navbar-default header-navigation stricky">
+        <div class="thm-container clearfix">
+          <div class="navbar-header">
+            <a
+              href="javascript:void(0);"
+              onclick="BuyEth()"
+              style="display: none"
+              class="for-mobile-show metamask-link"
+            >
+             <img
+                src="user_assets/img/meta-icon.png"
+                style="height: 35px; width: auto"
+              />
+               <small style="font-size: 12px; font-weight: 400"
+                >Connect wallet</small
+              >
+            </a>
+            <button
+              type="button"
+              class="navbar-toggle collapsed bitmex-icon-menu"
+              data-toggle="collapse"
+              data-target=".main-navigation"
+              aria-expanded="false"
+            ></button>
+            <a class="navbar-brand" href="/">
+              <img src="user_assets/img/logo.png" style="height: 80px" />
+            </a>
+          </div>
+  
+          <div
+            class="collapse navbar-collapse main-navigation mainmenu"
+            id="main-nav-bar"
+          >
+            <ul class="nav navbar-nav navigation-box navbar-right">
+              <li><a href="/#about">About Karbun</a></li>
+              <!--  <li><a href="#news">Karbun Partners</a> </li> -->
+              <li><a
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#whitepaperModal"
+                  style="font-size: 16px" >Whitepaper</a>
+              </li>
+              <li><a href="/#login">Join </a></li>
+              <li><a href="/#our-experts">Team </a></li>
+              <li><a href="/#roadmap">Roadmap</a></li>
+  
+              <li><a href="/#contact-us">Contact Karbun</a></li>
+              <li><a href="/terms">T&C</a></li>
+              <li><a
+                href="/emission-impact"
+               
+                style="font-size: 16px" >Emission Dashboard</a>
+            </li>
+              <li style="padding-top: 25px;padding-right:15px;" class="text/css">
+                <button id="google_translate_element"></button>
+  
+                <div id="google_translate_element"></div>
+                <script>
+                  function googleTranslateElementInit() {
+                    new google.translate.TranslateElement(
+                      {
+                        pageLanguage: "en",
+                        autoDisplay: "true",
+                        layout:
+                          google.translate.TranslateElement.InlineLayout
+                            .HORIZONTAL,
+                      },
+                      "google_translate_element"
+                    );
+                  }
+                </script>
+                <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+                <style type="text/css">
+                  /*google translate Dropdown */
+  
+                  #google_translate_element select {
+                    background: #1a874e !important;
+                    color: #fff;
+                    padding: 8px 10px;
+                    border: none;
+                    border-radius: 3px;
+                    height: auto !important;
+                  }
+  
+                  /*google translate link | logo */
+                  .goog-logo-link {
+                    display: none !important;
+                  }
+                  .goog-te-gadget {
+                    color: transparent !important;
+                  }
+  
+                  /* google translate banner-frame */
+  
+                  .goog-te-banner-frame {
+                    display: none !important;
+                  }
+  
+                  .skiptranslate.goog-te-gadget > div {
+                    display: block !important;
+                    width: 100% !important;
+                  }
+                  .goog-te-gadget {
+                    font-family: arial;
+                    font-size: 11px;
+                    color: #666;
+                    white-space: nowrap;
+                    max-height: 32px;
+                  }
+                </style>
+              </li>
+              <li class="xs-hide metamask-outer">
+                <a class="metamask-link" href="javascript:void(0);" onclick="enableMetaMask()">
+                  <img
+                    src="user_assets/img/meta-icon.png"
+                    style="height: 35px; width: auto"
+                  />
+                  <small style="font-size: 12px; font-weight: 400"
+                    >Connect wallet</small
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+      </nav>
+    </header>
+
+<section class="inner-banner gray-bg text-center">
+	<div class="thm-container">
+		<div class="breadcumb">
+			<a href="#">Home</a><!--
+			
+			--><span class="sep">-</span><!--
+			--><span class="page-name">Terms and Conditions </span>
+		</div><!-- /.breadcumb -->
+		<h3 id="title">Terms and Conditions </h3>
+	</div><!-- /.thm-container -->
+</section><!-- /.inner-banner -->
+
+
+
+<section class="video-box-style-one sec-pad light-dark-bg terms-sec">
+	<div class="thm-container">
+		<div class="row">
+		
+			<div class="col-md-12 m-auto">
+				<div class="terms-page-content">
+					
+					<div id="terms_conditions">
+            
+						<!-- <li>
+							<% var count =1%>
+							<% TitleDetails.forEach(function(row){%>
+                          	
+                          <div>
+							<i class="fa fa-check"></i><%=row.title%>
+                          	<%var content=row.content.replace(/(<p[^>]+?>|<p>|<\/p>)/img, "")%>
+							<p><%=content%>  </p>
+                          </div><%count++%>
+						  <%})%></li> -->
+					</div>
+				</div><!-- /.video-box-content -->
+			</div><!-- /.col-md-6 -->
+		</div><!-- /.row -->
+	</div><!-- /.thm-container -->
+</section>
+
+
+<div class="footer-top page-section" id="contact-us">
+  <div class="thm-container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+        <div class="single-footer-top">
+          <!-- <p>
+            <i class="bitmex-icon-envelope"></i
+            ><span>Email: </span>sales@karbun.io
+          </p> -->
+          <p> <i class="bitmex-icon-envelope"></i><a href="mailto:sales@karbun.io"> email:  sales@karbun.io</a></p>
+
+        </div>
+        <!-- /.single-footer-top -->
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+        <div class="single-footer-top">
+          <p>
+            <i class="bitmex-icon-phone-call"></i
+            ><span>Call: </span> +61415898818
+          </p>
+        </div>
+        <!-- /.single-footer-top -->
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        <div class="single-footer-top">
+          <p>
+            <i class="bitmex-icon-placeholder"></i
+            ><span>Web: </span>www.karbun.io
+          </p>
+        </div>
+        <!-- /.single-footer-top -->
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.thm-container -->
+</div>
+<!-- /.footer-top -->
+
+<div class="footer-bottom">
+  <div class="thm-container clearfix">
+    <div class="pull-left copy-text">
+      <p>&copy;<span id="copyright">
+        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+    </span>Karbun.io All rights reserved.</p>
+    </div>
+    <!-- /.pull-left copy-text -->
+    <div class="social pull-right">
+       <a href="https://web.telegram.org" target="_blank" class="fa fa-telegram"></a>
+
+      <a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a>
+      <!--
+    --><a href=" https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+      <!--
+    --><a href=" https://in.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+   
+
+    <a href="https://instagram.com" target="_blank" class="fa fa-instagram"></a>
+    </div>
+    <!-- /.social -->
+  </div>
+  <!-- /.thm-container -->
+</div>
+<!-- /.footer-bottom -->
+
+
+
+
+<section class="hidden-sidebar side-navigation" onclick="closeForm()">
+  <a href="#" class="close-button side-navigation-close-btn fa fa-times"></a
+  ><!-- /.close-button -->
+  <div class="sidebar-content">
+    <div class="social">
+      <a href="#" class="fa fa-telegram"></a>
+
+      <a href="#" class="fa fa-twitter"></a>
+      <!--
+    --><a href="#" class="fa fa-facebook"></a>
+     <a href="#" class="fa fa-linkedin"></a>
+     
+    <a href="#" class="fa fa-instagram"></a>
+    </div>
+    <!-- /.social -->
+  </div>
+  <!-- /.sidebar-content -->
+</section>
+<!-- /.footer-bottom -->
+
+ <!-- Modal -->
+ <div
+ class="modal fade comming-soon-popup"
+ id="whitepaperModal"
+ tabindex="-1"
+ role="dialog"
+ aria-labelledby="exampleModalLabel"
+ aria-hidden="true"
+>
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-body">
+       <button
+         type="button"
+         class="close"
+         data-dismiss="modal"
+         aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+       </button>
+       <div class="whitepaper-form">
+         <h2>
+           Please enter your email address to download the whitepaper.
+         </h2>
+         <form method="POST" action="whitepaper">
+           <div class="form-group">
+             <label>Email address</label>
+             <input
+               type="email"
+               name="email"
+               class="form-control"
+               id=""
+               placeholder="Enter email"
+               required
+             />
+           </div>
+
+           <button
+             
+             type="submit"
+             class="thm-btn yellow-bg-hvr"
+           >
+             Submit
+           </button>
+         </form>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+<div class="scroll-to-top scroll-to-target" data-target="html"><i class="fa fa-angle-up"></i></div> 
+<script src="user_assets/js/jquery.js"></script>
+<script src="user_assets/js/bootstrap.min.js"></script>
+<script src="user_assets/js/bootstrap-select.min.js"></script>
+<script src="user_assets/js/jquery.validate.min.js"></script>
+<script src="user_assets/js/owl.carousel.min.js"></script>
+<script src="user_assets/js/isotope.js"></script>
+<script src="user_assets/js/jquery.magnific-popup.min.js"></script>
+<script src="user_assets/js/waypoints.min.js"></script>
+<script src="user_assets/js/jquery.counterup.min.js"></script>
+<script src="user_assets/js/wow.min.js"></script>
+<script src="user_assets/js/jquery.easing.min.js"></script>
+<script src="user_assets/js/particles.min.js"></script>
+<script src="user_assets/js/particles-config.js"></script>
+<script src="user_assets/js/Chart.min.js"></script>
+<script src="user_assets/js/chart-config.js"></script>
+<script src="user_assets/js/custom.js"></script>
+<script src="user_assets/js/graph.js"></script>
+<script>
+	$(document).ready(function(){
+  $('ul.navigation-box li a').click(function(){
+    $('ul.navigation-box li a').removeClass("active");
+    $(this).addClass("active");
+});
+});
+</script>
+<script>
+  // Unpkg imports
+  const Web3Modal = window.Web3Modal.default;
+  const WalletConnectProvider = window.WalletConnectProvider.default;
+  const EvmChains = window.EvmChains;
+  const Fortmatic = window.Fortmatic;
+
+  // Web3modal instance
+  let web3Modal;
+
+  // Chosen wallet provider given by the dialog window
+  let provider;
+
+  // Address of the selected account
+  let selectedAccount;
+
+  /**
+   * Setup the orchestra
+   */
+  function init() {
+    console.log("Initializing example");
+    console.log("WalletConnectProvider is", WalletConnectProvider);
+    // console.log("Fortmatic is", Fortmatic);
+
+    // Tell Web3modal what providers we have available.
+    // Built-in web browser provider (only one can exist as a time)
+    // like MetaMask, Brave or Opera is added automatically by Web3modal
+    const providerOptions = {
+      walletconnect: {
+        package: WalletConnectProvider,
+        options: {
+          rpc: {
+            3: "https://ropsten.infura.io/v3/5e1b7d94f4784e86a1b2511857f15287",
+          },
+          network: "ropsten",
+          chainId: 3,
+          // infuraId: "bnb1a5cae5d9hp0we9cx9v02n9hvmt94nnuguv0fav",
+        },
+      },
+    };
+
+    web3Modal = new Web3Modal({
+      cacheProvider: false, // optional
+      providerOptions, // required
+    });
+  }
+
+  function BuyEth() {
+    startBuy();
+  }
+  async function startBuy() {
+    // console.log("Opening a dialog", web3Modal);
+    try {
+      provider = await web3Modal.connect();
+    } catch (e) {
+      console.log("Could not get a wallet connection", e);
+      return;
+    }
+
+    // Subscribe to accounts change: If the account is changed, the transactions goes on those accounts
+    // provider.on("accountsChanged", (accounts) => {
+    //     BuyToken();
+    // });
+
+    // Subscribe to chainId change
+    // provider.on("chainChanged", (chainId) => {
+    //     //BuyContent();
+    //     BuyToken();
+    // });
+
+    await resetAccountDataAll();
+  }
+  init();
+
+  async function resetAccountDataAll() {
+    await BuyToken(provider);
+  }
+
+  function decimalToHexString(number) {
+    if (number < 0) {
+      number = 0xffffffff + number + 1;
+    }
+    return number.toString(16).toUpperCase();
+  }
+
+  async function BuyToken() {
+    // Get a Web3 instance for the wallet
+    const web3 = new Web3(provider);
+
+    const chainId = await web3.eth.getChainId();
+
+    const accounts = await web3.eth.getAccounts();
+
+    // console.log("Got accounts", accounts);
+    selectedAccount = accounts[0];
+
+    // Go through all accounts and get their ETH balance
+    const rowResolvers = accounts.map(async (address) => {
+      const balance = await web3.eth.getBalance(address);
+    });
+
+    // until data for all accounts is loaded
+    await Promise.all(rowResolvers);
+
+    console.log("abcd", selectedAccount, chainId, web3);
+  }
+
+  async function resetAccountBid() {
+    await bid(provider);
+  }
+
+  async function bidNow() {
+    console.log("Opening a dialog", web3Modal);
+    try {
+      provider = await web3Modal.connect();
+    } catch (e) {
+      console.log("Could not get a wallet connection", e);
+      return;
+    }
+
+    await resetAccountBid();
+  }
+
+  async function bid() {
+    // Get a Web3 instance for the wallet
+    const web3 = new Web3(provider);
+
+    const chainId = await web3.eth.getChainId();
+
+    const accounts = await web3.eth.getAccounts();
+
+    // console.log("Got accounts", accounts);
+    selectedAccount = accounts[0];
+
+    // Go through all accounts and get their ETH balance
+    const rowResolvers = accounts.map(async (address) => {
+      const balance = await web3.eth.getBalance(address);
+    });
+
+    // until data for all accounts is loaded
+    await Promise.all(rowResolvers);
+
+    console.log("abcd", selectedAccount, chainId, web3);
+    const nonce = await web3.eth.getTransactionCount(
+      selectedAccount,
+      "latest"
+    ); //get latest nonce
+    const from_account = web3.utils.toChecksumAddress(selectedAccount);
+    const Admin = web3.utils.toChecksumAddress(
+      "0xF24a24Ab64a29edd50ACC655f4dd78360888A83e"
+    );
+    var amt = document.getElementById("bidding").value;
+
+    let estimates_gas = await web3.eth.estimateGas({
+      from: accounts[0],
+      to: Admin,
+    });
+
+    console.log("gas fees", estimates_gas);
+
+    let gasLimit = web3.utils.toHex(estimates_gas * 2);
+    let gasPrice_bal = await web3.eth.getGasPrice();
+    let gasPrice = web3.utils.toHex(gasPrice_bal * 2);
+
+    tx = {
+      from: accounts[0],
+      to: Admin,
+      nonce: nonce,
+      gas: 500000,
+      value: "0x" + (amt * 1000000000000000000 * 0.00023755).toString(16),
+    };
+
+    web3.eth.sendTransaction(tx, function (err, hash) {
+      if (!err) {
+        // Add modal
+
+        const expectedBlockTime = 1000; // 1sec
+
+        const sleep = (milliseconds) => {
+          return new Promise((resolve) =>
+            setTimeout(resolve, milliseconds)
+          );
+        };
+        (async function () {
+          let transactionReceipt = null;
+          while (transactionReceipt == null) {
+            // Waiting expectedBlockTime until the transaction is mined
+            transactionReceipt = await web3.eth.getTransactionReceipt(hash);
+            await sleep(expectedBlockTime);
+          }
+          console.log("trx", transactionReceipt);
+
+          console.log("trx receipt", transactionReceipt.status);
+          if (transactionReceipt.status) {
+          }
+        })();
+      } else {
+        console.log(err);
+      }
+    });
+  }
+</script>
+</body>
+</html>
